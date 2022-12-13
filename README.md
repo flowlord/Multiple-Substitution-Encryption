@@ -110,10 +110,23 @@ Usage:
 
 > modifier la liste des ["caractères spéciaux"](https://github.com/flowlord/Multiple-Substitution-Encryption/blob/main/configs/init.py#L54)
 
-> ajouter, modifier des fonctions
-
 
 -------------------------------------------------------------------
+
+## Comment démarrer ?
+
+	1) installer le module pyperclip avec l'aide de pip (pip install pyperclip)
+	
+	2) rendez-vous sur le main.py puis lancez le programme
+		la fonction demo va prendre et chiffrer un message
+		En même temps vous aurez générez un fichier keylib.keys
+		Ce sont vos clés de chiffrement gardez les à tous prix !
+	3) Explorez, modifier vos paramètres (setting.json)
+	
+	4) Assurez vous d'envoyer de manière sécurisé votre programme à une autre personne
+		Je dit bien tous le code source et pas seulement vos clés
+
+![image du projet](exemple/captur_demo.PNG)
 
 ## Ressources
 -------------------------------------------------------------------
