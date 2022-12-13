@@ -4,9 +4,10 @@
 from random import choice
 from pyperclip import paste
 
+from tools import rebuild,reinitialiser,mixer
 from MSE import mse_cipher,mse_decipher
 from MSE import mse_cipher_file,mse_decipher_file
-from tools import rebuild,reinitialiser,mixer
+
 import update
 
 
