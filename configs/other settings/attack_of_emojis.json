@@ -13,6 +13,7 @@
 
     "mini": 300,
     "maxi": 900,
+    "rolling": 843,
     
     "confusion": true
 }
