@@ -13,6 +13,7 @@
 
     "mini": 10000,
     "maxi": 20000,
+    "rolling": 154,
     
     "confusion": true
 }
