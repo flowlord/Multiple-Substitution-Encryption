@@ -1,0 +1,17 @@
+{
+
+        "cipher": "ascii_letters",
+        "substitue with": "configs/DBT/all.db",
+        "cipher punctuation": true,
+        "cipher space": true,
+        "cipher accent": true,
+        "cipher digits": true,
+        "len_caractere": [5,8],
+        "len_carac_special": [3,4],
+        "nombre_cle": [100,150],
+        "mini": 100,
+        "maxi": 700,
+        "rolling": 26834,
+        "confusion": true
+    
+}
