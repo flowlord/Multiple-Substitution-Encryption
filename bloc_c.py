@@ -10,6 +10,7 @@
 
 from configs.init import*
 from random import choice,randint
+from subdiv_mini import x_k,x_l
 
 
 def ajout_carac_b(plain_text,x):
@@ -38,6 +39,22 @@ def enleve_carac_b(code):
 		if element not in groupe_b:
 			new_text = new_text + element  
 	return new_text
+
+
+def obscure(code,x):
+	code = ajout_carac_b(code,x)
+	code = x_k(code)
+
+	return code
+
+
+def obscure_inv(code):
+	code = x_l(code)
+	code = enleve_carac_b(code)
+
+	return code
+
+
 
 
 

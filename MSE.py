@@ -33,7 +33,7 @@
 """
 
 __author__  = "Moon Kerling"
-__version__ = "17.0.0"
+__version__ = "17.1.0"
 __date__    = "2 janvier 2022"
 
 from random import randint
@@ -41,7 +41,7 @@ from pyperclip import copy
 
 from bloc_a import complexifier,complexifier_inv
 from bloc_b import cipher,decipher
-from bloc_c import ajout_carac_b,enleve_carac_b
+from bloc_c import obscure,obscure_inv
 
 from configs.init import*
 
@@ -52,7 +52,7 @@ def mse_cipher(msg):
 	"""
 	a  = complexifier(msg)
 	b = cipher(a)
-	c = ajout_carac_b(b,randint(mini,maxi))
+	c = obscure(b,randint(mini,maxi))
 	
 	copy(c)
 	return c
@@ -62,7 +62,7 @@ def mse_decipher(msg):
 	"""
 	|C| --> |B| --> |A|
 	"""
-	c = enleve_carac_b(msg)
+	c = obscure_inv(msg)
 	b = decipher(c)
 	a = complexifier_inv(b)
 	

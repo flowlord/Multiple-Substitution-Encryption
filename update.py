@@ -1,6 +1,6 @@
 url = "https://github.com/flowlord/Multiple-Substitution-Encryption/blob/main/README.md"
 
-version_actuelle = "0011211548862 - 33221 - 145205932375L"
+version_actuelle = "0011211548862 - 33222 - 145205932375L"
 
 import urllib.request
 
