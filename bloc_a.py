@@ -7,16 +7,17 @@
 		servant à modifier le text entré.
 """
 
-from subdiv_mini import inverser_phrase,remettre_phrase
+from subdiv_mini import inverser_phrase,remettre_phrase,x_k,x_l
 
 def complexifier(plain_text):
 	"""
 		example:
-			hello word ---> rowdl lehol
+			hello word ---> leorwlodlh 
 	"""
 
 	plain_text =  plain_text[::-1]
 	plain_text = inverser_phrase(plain_text)
+	plain_text = x_k(plain_text)
 
 	return plain_text
 
@@ -25,14 +26,14 @@ def complexifier_inv(coded_text):
 	""" 
 		Remet le text dans le bon sens
 		example:
-			rowdl lehol ---> hello world
+			leorwlodlh  ---> hello world
 	"""
 
+	coded_text = x_l(coded_text)
 	coded_text = remettre_phrase(coded_text)
 	coded_text =  coded_text[::-1]
 
 	return coded_text
-
 
 
 

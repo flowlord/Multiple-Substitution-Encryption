@@ -50,7 +50,7 @@ def verifier_carac(text):
 
 def cipher(plain_text):
 	"""
-	Je prend une clé au hazard et substitue les caractères
+	Il prend une clé au hazard et substitue les caractères
 	
 	exemple: a ---> 57$2^P-
 	"""

@@ -49,23 +49,29 @@ def rebuild():
 	reinitialiser()
 	
 	old_carac = open(fichier_jeux_carac,'r',encoding='utf-8').read()
-	new_carac = []
+	old_carac = list(old_carac)
+	old_carac = set(old_carac)
+	old_carac = ''.join(old_carac)
+
+	new_carac = ""
 	
 	for c in old_carac:
-		if c not in carac_sub and c not in new_carac:
+		if c not in carac_sub:
 			if c != "\n":
-				new_carac.append(c)
+				new_carac = new_carac+ c
 	
 	new_carac = "".join(new_carac)
 	
 	open(fichier_jeux_carac,'w',encoding='utf-8').write(new_carac)
-	
+
 
 def gen_version():
 	"""
 		Génère une autre version du programme
 	"""
-	generer_para()
+
+	reinitialiser()
+	creat_()
 	mixer()
 
 
@@ -81,4 +87,5 @@ def first_mixer():
 		open("user.data","w").close()
 
 first_mixer()
+
 

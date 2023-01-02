@@ -11,10 +11,10 @@ on divise le mot au milieu et met la première moitié à la fin
 et si le nombre de lettres est impair,
 la dernière moitié du mot reçoit le caractère supplémentaire.
 
-C = Combinaision
+Combi = Combinaision
 
 """
-
+from configs.init import rolling
 
 def milieu(char):
 	"""
@@ -23,32 +23,37 @@ def milieu(char):
 	return int(len(char)/2)
 
 
-def C1(t):
-	m = milieu(t)
-	start = t[:m]
-	middle = t[m:-1]
-	end = t[-1]
+def Combi_impaire_1(word):
+	"""
+	ABCDE --> CDEAB
+	"""
+	m = milieu(word)
+	start = word[:m]
+	middle = word[m:-1]
+	end = word[-1]
 	return middle+end+start
 
-def C1_inv(t):
-	m = milieu(t)
-	start = t[m+1:]
-	middle = t[:m]
-	end = t[m]
+def Combi_impaire_inv(word):
+	"""
+	CDEAB --> ABCDE
+	"""
+	m = milieu(word)
+	start = word[m+1:]
+	middle = word[:m]
+	end = word[m]
 	return start+middle+end
 
 
-
-def C2(t):
-	m = milieu(t)
-	start = t[:m]
-	end = t[m:]
+def Combi_paire(word):
+	m = milieu(word)
+	start = word[:m]
+	end = word[m:]
 	return end+start
 	
-def C2_inv(t):
-	m = milieu(t)
-	start = t[m:]
-	end = t[:m]
+def Combi_paire_inv(word):
+	m = milieu(word)
+	start = word[m:]
+	end = word[:m]
 	return start+end
 
 
@@ -58,9 +63,9 @@ def inverser_mot(word):
 	if n == 1:
 		return word
 	elif n%2 == 0:
-		return C2(word)
+		return Combi_paire(word)
 	else:
-		return C1(word)
+		return Combi_impaire_1(word)
 
 
 def remettre_mot(word):
@@ -69,9 +74,9 @@ def remettre_mot(word):
 	if n == 1:
 		return word
 	elif n%2 == 0:
-		return C2_inv(word)
+		return Combi_paire_inv(word)
 	else:
-		return C1_inv(word)
+		return Combi_impaire_inv(word)
 
 
 def remettre_phrase(code):
@@ -92,4 +97,33 @@ def inverser_phrase(msg):
 		code = code + inverser_mot(word) + ' '
 	
 	return code[:-1]
+
+
+def k_verse(text):
+	text = inverser_phrase(text)
+	text = inverser_mot(text)
+	return text
+
+
+def k_inverse(text):
+	text = remettre_mot(text)
+	text = remettre_phrase(text)
+
+	return text
+
+
+def x_k(text):
+
+	for _ in range(rolling+1):
+		text = k_verse(text)
+	return text
+
+
+def x_l(text):
+
+	for _ in range(rolling+1):
+		text = k_inverse(text)
+	return text
+
+
 

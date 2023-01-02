@@ -1,5 +1,4 @@
-Stranger from Discord
-
+![Illustration](exemple/cover.png)
 ![image du projet](exemple/logo.png)
 
 
@@ -11,20 +10,20 @@ Stranger from Discord
 	╚═╝     ╚═╝ ╚═════╝  ╚══════╝
 
 
-# MSE PROJECT
+# PROJET MSE
 -------------------------------------
 
 # MULTIPLE SUBSTITUTION ENCRYPTION
 -------------------------------------
 
-Chiffrement par substitution multiple
+Chiffrement par substitution multiple + obscurcissement
 
 Programme de chiffrement de text par substitution multiple en 3 étapes.
 
 pour but de créer des messages codés avec des messages.
 
 
-**Nom de version: CRC XVI [ GLASSG0W ]**
+**Nom de version: CRC XVII [ GOLIATH ]**
 
 # Comment sa fonctionne ?
 
@@ -43,6 +42,7 @@ pour but de créer des messages codés avec des messages.
         Chaque caractère est substitué avec cette clé.
 --------------------------------------------------------------------------
     **III) Bloc C**
+    	[ Obscurcissement ]
         Ajoute des caractères dans le code après la substitution.
 
 
@@ -118,9 +118,10 @@ Usage:
 	1) installer le module pyperclip avec l'aide de pip (pip install pyperclip)
 	
 	2) rendez-vous sur le main.py puis lancez le programme
-		la fonction demo va prendre et chiffrer un message
+		la fonction demo pour donner un exemple de message chiffré
 		En même temps vous aurez générez un fichier keylib.keys
 		Ce sont vos clés de chiffrement gardez les à tous prix !
+
 	3) Explorez, modifier vos paramètres (setting.json)
 	
 	4) Assurez vous d'envoyer de manière sécurisé votre programme à une autre personne
@@ -135,4 +136,6 @@ Exemples de code secret: [codex.vu](https://bit.ly/theclawsofgod)
 
 le monde merveilleux des secrets, des lettres et des chiffres !
 
-001114588862 - 33221 - 1444593247B
+Stranger from Discord
+
+0011211548862 - 33221 - 145205932375L

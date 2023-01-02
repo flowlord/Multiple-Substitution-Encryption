@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-# Copyright 2019-2022 by Motion Kerling. All Rights Reserved.
+# Copyright 2019-2023 by Moon Kerling. All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and its
 # documentation for any purpose and without fee is hereby granted,
 # provided that the above copyright notice appear in all copies and that
 # both that copyright notice and this permission notice appear in
-# supporting documentation, and that the name of Motion Kerling
+# supporting documentation, and that the name of Moon Kerling
 # not be used in advertising or publicity pertaining to distribution
 # of the software without specific, written prior permission.
-# Motion Kerling DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+# Moon Kerling DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
 # ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
-# Motion Kerling BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
+# Moon Kerling BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
 # ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
 # IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 # OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
@@ -32,9 +32,9 @@
 
 """
 
-__author__  = "Motion Kerling & GLASSG0W"
-__version__ = "16.0.0"
-__date__    = "12 decembre 2022"
+__author__  = "Moon Kerling"
+__version__ = "17.0.0"
+__date__    = "2 janvier 2022"
 
 from random import randint
 from pyperclip import copy

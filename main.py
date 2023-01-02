@@ -4,10 +4,9 @@
 from random import choice
 from pyperclip import paste
 
-from tools import rebuild,reinitialiser,mixer
+from tools import rebuild,reinitialiser,mixer,gen_version
 from MSE import mse_cipher,mse_decipher
 from MSE import mse_cipher_file,mse_decipher_file
-
 import update
 
 
@@ -19,7 +18,6 @@ exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',
 				   'mec tfk quoi la',
 				   'alors la je fait expres de mettre une tres longue phrase pour des test',
 				   'hallo zusammen heute','mec tfk quoi']
-
 
 def demo():
 	print('---------- * DEMO * ----------\n')
@@ -37,14 +35,18 @@ def demo():
 # Reconstruit le jeu de caractère actuelle
 #rebuild()
 
+# Pour supprimer les clés de chiffrement
+#reinitialiser()
+
+#Génère une autre version du programme
+#gen_version()
+
 # Pour chiffrer plusieurs message et le mettre dans un fichier
+
 #mse_cipher_file('result.txt',exemple_phrases)
 
 # Pour déchiffrer plusieurs message dans un fichier
 #mse_decipher_file('result.txt')
-
-# Pour supprimer les clés de chiffrement
-#reinitialiser()
 
 # chiffrer un message
 # m = mse_cipher("bonjour tous le monde")
@@ -54,7 +56,4 @@ def demo():
 #print(mse_decipher(m))
 
 demo()
-
-
-
 

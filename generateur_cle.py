@@ -2,11 +2,27 @@
 # coding: utf-8
 
 """
+  $$$$   $$$$$$$  $$   $$  $$$$$$$   $$$$$   $$$$   $$$$$     $$   $$  $$$$$$$  $$    $$ 
+ $$  $$  $$       $$$  $$  $$       $$   $$   $$   $$   $$    $$  $$   $$        $$  $$  
+$$       $$$$$    $$$$ $$  $$$$$     $$$      $$    $$$       $$$$$    $$$$$      $$$$   
+$$  $$$  $$       $$ $$$$  $$          $$$    $$      $$$     $$  $$   $$          $$    
+ $$  $$  $$       $$  $$$  $$       $$   $$   $$   $$   $$    $$   $$  $$          $$    
+  $$$$   $$$$$$$  $$   $$  $$$$$$$   $$$$$   $$$$   $$$$$     $$   $$  $$$$$$$     $$    
+
 librairie de clé = keylib
 fichier qui contient plusieurs clé de chiffrement
 
+exemple d'une clé (en supposent que les caractères à 
+substituer sont des lettres minuscules):
+
+[ QM12L SPDM XNC PQMX *PCM CPQ9 M92PWC3 MQO@ --> n* ]
+    a  |  b | c | d  |  e |  f |   g   | h
+
+n* = nombre de caractères à substituer
+L'espace est compter.
+
 Reprend une partie du code source du logiciel GENESIS KEY © qui,
-dans une sombre époque du projet était un logiciel payant ;)
+à une autre époque du projet était un logiciel propriétaire ;)
 """
 
 from random import randint,choice
@@ -60,8 +76,5 @@ def gen_lib_cle(nombre_cle):
 		file.write(f'{gen_cle(len_carac_sub)}\n')
 
 	file.close()
-
-
-
 
 
