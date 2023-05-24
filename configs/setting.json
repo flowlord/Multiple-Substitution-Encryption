@@ -1,0 +1,17 @@
+{
+
+        "cipher": "ascii_letters",
+        "substitue with": "configs/all.db",
+        "cipher punctuation": "true",
+        "cipher space": true,
+        "cipher accent": "true",
+        "cipher digits": "true",
+        "len_caractere": [5,6],
+        "len_carac_special": [3,4],
+        "nombre_cle": [50,88],
+        "mini": 100,
+        "maxi": 697,
+        "confusion": false,
+        "rolling":24753
+    
+}
