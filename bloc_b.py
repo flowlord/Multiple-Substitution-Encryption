@@ -55,7 +55,7 @@ def cipher(plain_text):
 	exemple: a ---> 57$2^P-
 	"""
 	
-	verifier_carac(plain_text)
+	#verifier_carac(plain_text)
 	
 	key = choice(listkey).split(' ')
 	key = [element.replace('\n','') for element in key]

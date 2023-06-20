@@ -33,8 +33,8 @@
 """
 
 __author__  = "Motion Kerling"
-__version__ = "15.9.0"
-__date__    = "26 septembre 2022"
+__version__ = "20.1.0"
+__date__    = "20 JUIN 2023"
 
 from random import randint
 from pyperclip import copy
@@ -131,4 +131,39 @@ def mse_sha_4_decipher(msg):
 	a = complexifier_inv(b)
 	
 	return a
+
+# ---
+
+def mse_sha_5_cipher(msg):
+	"""
+	MESSAGE --> |A| --> |B| -->|C| --> |D| --> |E| --> CODED MESSAGE
+	"""
+	a  = complexifier(msg)
+	b = cipher(a)
+	c  = complexifier(b)
+	d = ajout_carac_b(c,randint(mini,maxi))
+	e = cipher(d)
+	
+	copy(e)
+	return e
+
+
+def mse_sha_5_decipher(msg):
+	"""
+	CODED MESSAGE --> |E| --> |D| -->|C| --> |B| --> |A| --> MESSAGE
+	"""
+	
+	a = decipher(msg)
+	b = enleve_carac_b(a)
+	c  = complexifier_inv(b)
+	d = decipher(c)
+	e  = complexifier_inv(d)
+	
+	return e
+
+
+msg = mse_sha_5_cipher("hello world")
+print(mse_sha_5_decipher(msg))
+
+
 

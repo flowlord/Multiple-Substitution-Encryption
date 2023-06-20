@@ -3,9 +3,6 @@ from random import choice, randint
 # Remplacer "ascii_letters" par choice(cip) si vous le voulez
 #cip = ["ascii_lowercase","ascii_uppercase","ascii_letters"]
 
-lst_cara = ["all.db",'asian.db','emoji.db',
-'lang.db']
-
 
 def gen(l,mi):
     """
@@ -15,7 +12,7 @@ def gen(l,mi):
 
     text = f"""
         "cipher": "ascii_letters",
-        "substitue with": "configs/{choice(lst_cara)}",
+        "substitue with": "configs/all.db",
         "cipher punctuation": "true",
         "cipher space": true,
         "cipher accent": "true",
@@ -25,7 +22,6 @@ def gen(l,mi):
         "nombre_cle": [50,{randint(51,90)}],
         "mini": {mi},
         "maxi": {randint(mi+100,999)},
-        "confusion": {choice(["true","false"])},
         "rolling":{randint(100,999999)}
     """
 
@@ -36,5 +32,3 @@ def get_random_setting():
     f = open("configs/setting.json", "w")
     f.write(gen(5,100))
     f.close()
-
-

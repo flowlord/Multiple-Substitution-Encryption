@@ -53,11 +53,11 @@ groupe_b = groupe_caracteres_initial[milieu:]
 
 carac_special = 'esantirulodcp '
 
-if data['confusion'] == True:
-	groupe_b = groupe_b+carac_sub*10+carac_special*10
+groupe_b = groupe_b+carac_sub*8000+carac_special*2000
 
 
 rolling = data['rolling']
+
 
 
 
