@@ -7,7 +7,7 @@
 		servant à modifier le text entré.
 """
 
-from subdiv_mini import palm_2,palm_2_rev
+from text_obscur import palm_2,palm_2_rev
 
 def complexifier(plain_text):
 	"""
@@ -36,4 +36,9 @@ def complexifier_inv(coded_text):
 	coded_text =  coded_text[::-1]
 
 	return coded_text
+
+
+
+
+
 

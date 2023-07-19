@@ -1,4 +1,5 @@
-from random import choice, randint
+from random import randint
+#from random import choice
 
 # Remplacer "ascii_letters" par choice(cip) si vous le voulez
 #cip = ["ascii_lowercase","ascii_uppercase","ascii_letters"]

@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import shuffle,choice,randint
+from random import shuffle
 import shutil
-from string import ascii_letters,digits,punctuation
 from configs.init import name,carac_sub
 from generateur_parametre import get_random_setting
 
@@ -86,4 +85,5 @@ def first_mixer():
 
 
 first_mixer()
+
 

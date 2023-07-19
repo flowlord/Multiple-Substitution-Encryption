@@ -4,7 +4,7 @@
 from random import choice
 from pyperclip import paste
 
-from MSE import mse_sha_1_cipher,mse_sha_1_decipher,mse_sha_2_cipher,mse_sha_2_decipher,mse_sha_3_cipher,mse_sha_3_decipher,mse_sha_4_cipher,mse_sha_4_decipher
+from MSE import mse_cipher,mse_decipher
 
 from tools import rebuild,reinitialiser,mixer
 
@@ -17,6 +17,20 @@ exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',
 				   'mec tfk quoi la',
 				   'alors la je fait expres de mettre une tres longue phrase pour des test',
 				   'hallo zusammen heute','mec tfk quoi']
+
+
+
+def demo():
+	print('---------- * DEMO * ----------\n')
+	print('Text chiffré:\n')
+	message = mse_cipher(choice(exemple_phrases))
+	print(message,'\n\n')
+
+	print('Texte déchiffré:\n')
+	print(mse_decipher(message))
+
+
+demo()
 
 
 # Mélanger les caractères spéciaux ( avec le jeu de caractère actuelle)
@@ -40,45 +54,6 @@ exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',
 
 # Déchiffrer
 #print(mse_decipher(message))
-
-
-msg = "hello world"
-
-
-# Chiffrement / déchiffrement MSE SHA 1
-
-print("MSE SHA 1")
-m1 = mse_sha_1_cipher(msg)
-print(m1)
-print(mse_sha_1_decipher(m1))
-print("\n\n\n")
-
-
-# Chiffrement / déchiffrement MSE SHA 2
-
-print("MSE SHA 2")
-m2 = mse_sha_2_cipher(msg)
-print(m2)
-print(mse_sha_2_decipher(m2))
-print("\n\n\n")
-
-# Chiffrement / déchiffrement MSE SHA 3
-
-print("MSE SHA 3")
-m3 = mse_sha_3_cipher(msg)
-print(m3)
-print(mse_sha_3_decipher(m3))
-print("\n\n\n")
-
-# Chiffrement / déchiffrement MSE SHA 4
-
-print("MSE SHA 4")
-m4 = mse_sha_4_cipher(msg)
-print(m4)
-print(mse_sha_4_decipher(m4))
-print("\n\n\n")
-
-
 
 
 

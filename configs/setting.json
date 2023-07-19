@@ -6,11 +6,11 @@
         "cipher space": true,
         "cipher accent": "true",
         "cipher digits": "true",
-        "len_caractere": [4,5],
+        "len_caractere": [5,12],
         "len_carac_special": [3,4],
-        "nombre_cle": [50,88],
+        "nombre_cle": [50,52],
         "mini": 100,
-        "maxi": 300,
-        "rolling":24753
+        "maxi": 314,
+        "rolling":56286
     
 }

@@ -62,8 +62,3 @@ def gen_lib_cle(nombre_cle):
 	file.close()
 
 
-
-
-
-
-
