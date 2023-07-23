@@ -1,5 +1,5 @@
 
-![logo](exemple/logo.png)
+![logo](exemple/logo.jpeg)
 
 
 ![video demo](exemple/demo_video.gif)
