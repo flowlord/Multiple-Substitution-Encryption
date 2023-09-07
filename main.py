@@ -6,7 +6,7 @@ from pyperclip import paste
 
 from MSE import mse_cipher,mse_decipher
 
-from tools import rebuild,reinitialiser,mixer
+from tools import rebuild,reinitialiser,mixer, gen_db_text
 
 
 exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',
@@ -19,15 +19,14 @@ exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',
 				   'hallo zusammen heute','mec tfk quoi']
 
 
-
 def demo():
 	print('---------- * DEMO * ----------\n')
 	print('Text chiffré:\n')
-	message = mse_cipher(choice(exemple_phrases))
+	message = mse_cipher(choice(exemple_phrases), True)
 	print(message,'\n\n')
 
 	print('Texte déchiffré:\n')
-	print(mse_decipher(message))
+	print(mse_decipher(message, False))
 
 
 demo()
@@ -39,12 +38,6 @@ demo()
 # Reconstruit le jeu de caractère actuelle
 #rebuild()
 
-# Pour chiffrer plusieurs message et le mettre dans un fichier
-#mse_cipher_file('result.txt',exemple_phrases)
-
-# Pour déchiffrer plusieurs message dans un fichier
-#mse_decipher_file('result.txt')
-
 # Pour supprimer les clés de chiffrement
 #reinitialiser()
 
@@ -55,5 +48,7 @@ demo()
 # Déchiffrer
 #print(mse_decipher(message))
 
+#Génère une nouvelle database de text
+#gen_db_text(name, lenght=999)
 
 

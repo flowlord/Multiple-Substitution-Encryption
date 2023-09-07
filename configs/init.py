@@ -25,12 +25,12 @@ else:
 
 if data["cipher punctuation"] == True:
 	carac_sub = carac_sub+ punctuation
-if data["cipher space"] == True:
-	carac_sub = carac_sub+ ' '
 if data["cipher digits"] == True:
 	carac_sub = carac_sub+ digits
 if data["cipher accent"] == True:
 	carac_sub = carac_sub+ accent
+	
+carac_sub = carac_sub+ ' '
 
 len_carac_sub = len(carac_sub)
 
@@ -53,12 +53,7 @@ groupe_b = groupe_caracteres_initial[milieu:]
 
 carac_special = 'esantirulodcp '
 
-groupe_b = groupe_b+carac_sub*8000+carac_special*2000
-
-
 rolling = data['rolling']
-
-
 
 
 

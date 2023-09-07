@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import shuffle
+from random import shuffle, randint
 import shutil
 from configs.init import name,carac_sub
 from generateur_parametre import get_random_setting
@@ -63,9 +63,20 @@ def rebuild():
 	new_carac = "".join(new_carac)
 	
 	open(name,'w',encoding='utf-8').write(new_carac)
-	
 
-def first_mixer():
+
+def gen_db_text(name, lenght=999):
+    """
+    Génère une nouvelle database de text
+	exemple: gen_db_text("configs/light_weight",500)
+    """
+    rg = open("configs/all.db", "r", encoding="utf-8").read()
+
+    new_data = rg[0:lenght]
+    new_db = open(name+".db", "w", encoding="utf-8").write(new_data)
+
+
+def first_mixer(random_settings=False):
 	"""
 	Mélange l'ordre des caractères et génère des paramètre aléatoire, si
 	l'utilisateur utilise pour la première fois
@@ -76,7 +87,9 @@ def first_mixer():
 		f = open("user.data", "r")
 		f.close()
 	except:
-		get_random_setting()
+		if random_settings is True:
+			get_random_setting()
+		
 		mixer()
 		rebuild()
 

@@ -1,16 +1,16 @@
 {
 
         "cipher": "ascii_letters",
-        "substitue with": "configs/all.db",
+        "substitue with": "configs/light_weight.db",
         "cipher punctuation": "true",
         "cipher space": true,
         "cipher accent": "true",
         "cipher digits": "true",
-        "len_caractere": [5,12],
+        "len_caractere": [5,7],
         "len_carac_special": [3,4],
-        "nombre_cle": [50,52],
+        "nombre_cle": [50,61],
         "mini": 100,
-        "maxi": 314,
-        "rolling":56286
+        "maxi": 673,
+        "rolling":14
     
 }
