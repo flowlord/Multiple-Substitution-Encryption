@@ -102,33 +102,20 @@ def inverser_phrase(msg):
 # obscurcissement ++
 
 def palm_1(msg):
-	a1 = inverser_phrase(msg)
-	a2 = inverser_mot(a1)
-	a3 = inverser_phrase(a2)
-	a4 = inverser_mot(a3)
-	a5 = inverser_phrase(a4)
-	a6 = inverser_mot(a5)
-	a7 = inverser_phrase(a6)
-	a8 = inverser_mot(a7)
-	a9 = inverser_phrase(a8)
-	a10 = inverser_mot(a9)
 
-	return a10
+	for _ in range(11):
+		msg = inverser_phrase(msg)
+		msg = inverser_mot(msg)
+
+	return msg
 
 
 def palm_1_rev(msg):
-	a1 = remettre_mot(msg)
-	a2 = remettre_phrase(a1)
-	a3 = remettre_mot(a2)
-	a4 = remettre_phrase(a3)
-	a5 = remettre_mot(a4)
-	a6 = remettre_phrase(a5)
-	a7 = remettre_mot(a6)
-	a8 = remettre_phrase(a7)
-	a9 = remettre_mot(a8)
-	a10 = remettre_phrase(a9)
+	for _ in range(11):
+		msg = remettre_mot(msg)
+		msg = remettre_phrase(msg)
 
-	return a10
+	return msg
 
 
 def palm_2(msg):
@@ -141,4 +128,5 @@ def palm_2_rev(msg):
 	for _ in range(rolling):
 		msg = palm_1_rev(msg)
 	return msg
+
 

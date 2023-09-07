@@ -33,8 +33,8 @@
 """
 
 __author__  = "Detrox922"
-__version__ = "25.1.0"
-__date__    = "19 JUILLET 2023"
+__version__ = "26.0.0"
+__date__    = "07 septembre 2023"
 
 
 from random import randint
@@ -47,7 +47,7 @@ from bloc_c import ajout_carac_b,enleve_carac_b
 from configs.init import*
 
 
-def mse_cipher(msg):
+def mse_cipher(msg,auto_copy=True):
 	"""
 	MESSAGE --> |A| --> |B| -->|C| --> |D| --> |E| --> CODED MESSAGE
 	"""
@@ -57,11 +57,12 @@ def mse_cipher(msg):
 	d = ajout_carac_b(c,randint(mini,maxi))
 	e = cipher(d)
 	
-	copy(e)
+	if auto_copy is True:
+		copy(e)
 	return e
 
 
-def mse_decipher(msg):
+def mse_decipher(msg, auto_copy=False):
 	"""
 	CODED MESSAGE --> |E| --> |D| -->|C| --> |B| --> |A| --> MESSAGE
 	"""
@@ -71,9 +72,8 @@ def mse_decipher(msg):
 	c  = complexifier_inv(b)
 	d = decipher(c)
 	e  = complexifier_inv(d)
+
+	if auto_copy is True:
+		copy(e)
 	
 	return e
-
-
-
-
