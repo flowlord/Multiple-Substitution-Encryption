@@ -17,7 +17,7 @@ def gen(l,mi):
         "cipher space": true,
         "cipher accent": "true",
         "cipher digits": "true",
-        "len_caractere": [{l},{randint(l+1,15)}],
+        "len_caractere": [{l},{randint(l+1,8)}],
         "len_carac_special": [3,{l-1}],
         "nombre_cle": [50,{randint(3,90)}],
         "mini": {mi},
