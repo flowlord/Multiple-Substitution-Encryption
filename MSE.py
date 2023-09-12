@@ -34,7 +34,7 @@
 
 __author__  = "Detrox922"
 __version__ = "26.0.0"
-__date__    = "07 septembre 2023"
+__date__    = "12 septembre 2023"
 
 
 from random import randint
@@ -54,7 +54,7 @@ def mse_cipher(msg,auto_copy=True):
 	a  = complexifier(msg)
 	b = cipher(a)
 	c  = complexifier(b)
-	d = ajout_carac_b(c,randint(mini,maxi))
+	d = ajout_carac_b(c,randint(min_nbr_key,max_nbr_key))
 	e = cipher(d)
 	
 	if auto_copy is True:
