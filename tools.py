@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import shuffle, randint
+from random import shuffle, choice, randint
 import shutil
 from configs.init import name,carac_sub
 from generateur_parametre import get_random_setting
@@ -70,10 +70,10 @@ def gen_db_text(name, lenght=999):
     Génère une nouvelle database de text
 	exemple: gen_db_text("configs/light_weight",500)
     """
-    rg = open("configs/all.db", "r", encoding="utf-8").read()
+    rg = open("configs/all.txt", "r", encoding="utf-8").read()
 
     new_data = rg[0:lenght]
-    new_db = open(name+".db", "w", encoding="utf-8").write(new_data)
+    new_db = open("configs/"+name, "w", encoding="utf-8").write(new_data)
 
 
 def first_mixer(random_settings=False):
@@ -83,20 +83,22 @@ def first_mixer(random_settings=False):
 	le programme.
 	"""
 
-	try:
-		f = open("user.data", "r")
-		f.close()
-	except:
-		if random_settings is True:
-			get_random_setting()
-		
-		mixer()
-		rebuild()
+	if os.path.exists("user.data") is False:
+
+		db = choice(["light_weight.txt", "ultra_light_weight.txt"])
 
 		f = open("user.data", "w")
 		f.close()
 
+		if random_settings is True:
+			get_random_setting(db)
+		
+		gen_db_text(db, randint(150,len(open("configs/all.txt", "r", encoding="utf-8").read())))
+		mixer()
+		rebuild()
 
-first_mixer()
+
+
+first_mixer(True)
 
 

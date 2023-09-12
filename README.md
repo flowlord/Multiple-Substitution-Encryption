@@ -1,5 +1,5 @@
 
-![logo](exemple/logo.jpeg)
+![logo](exemple/logo.webp)
 
 
 ![video demo](exemple/demo_video.gif)
@@ -15,10 +15,10 @@ Programme de chiffrement de text par substitution multiple en 3 étapes.
 
 pour but de créer des messages codés avec des messages.
 
-**Le programme est unique à son utilisateur, vous devez partager le code entier pour pouvoir communiquer avec d'autre personne.**
+**Le programme est unique à son utilisateur, vous devez partager le code source entier pour pouvoir communiquer avec d'autre personne.**
 
 
-**Nom de version: CRC XVIII [ GOLIATH ]**
+**Nom de version: CRC XIX [ MAROON V]**
 
 # Comment sa fonctionne ?
 
@@ -30,7 +30,7 @@ pour but de créer des messages codés avec des messages.
 --------------------------------------------------------------------------
 	
     **I) Bloc A**
-        Une série de fonction modifie le texte entré.
+        Une série de fonction modifie la structure et le sens texte entré.
 --------------------------------------------------------------------------
     **II) Bloc B**
         Une clé de chiffrement est choisie au hasard.
@@ -93,7 +93,7 @@ Usage:
 # Conseille et Astuces
 -------------------------------------------------------------------
 
-> Vous pouvez chiffrer autre chose que des lettres (minuscules ou majuscules) comme les ponctuations, accents et chiffres pour celà écrivez 'true' devant les carctères que vous voulez chiffrer,(_setting_.json)
+> Vous pouvez chiffrer autre chose que des lettres minuscules ou majuscules, les ponctuations, accents et chiffres pour celà écrivez 'true' devant le type de carctères que vous voulez chiffrer,(_setting_.json)
 
 ![setting file](exemple/example_setting.PNG)
 
@@ -120,7 +120,7 @@ Usage:
 	3) Explorez, modifier vos paramètres (setting.json)
 	
 	4) Assurez vous d'envoyer de manière sécurisé votre programme à une autre personne
-		Je dit bien tous le code source et pas seulement vos clés
+		Je dit bien tous le code source et pas seulement vos clés.
 
 ![image du projet](exemple/captur_demo.PNG)
 
@@ -133,6 +133,7 @@ Exemples de code secret: [codex.vu](https://bit.ly/theclawsofgod)
 
 le monde merveilleux des secrets, des lettres et des chiffres !
 
-twitter: https://twitter.com/motionkerling
 
 0011211548862 - 33222 - 1452215482375L
+
+

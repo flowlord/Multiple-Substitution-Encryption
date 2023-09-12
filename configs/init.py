@@ -43,7 +43,7 @@ if os.path.exists(name) is False:
 len_caractere = data['len_caractere']
 longeur_carac_special = data['len_carac_special']
 nombre_cle = data['nombre_cle']
-mini,maxi = data['mini'],data['maxi']
+min_nbr_key,max_nbr_key = data['mini'],data['maxi']
 
 
 groupe_caracteres_initial = "".join(open(name,'r',encoding='utf-8').readlines())

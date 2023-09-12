@@ -49,14 +49,14 @@ def gen_cle(len_carac_sub):
 	return cle[:-1]
    
    
-def gen_lib_cle(nombre_cle):
+def gen_lib_cle(min_nbr_key,max_nbr_key):
 	"""
 	Génère une librairie de clé
 	"""
 
 	file = open('keylib.keys','w',encoding='utf-8')
 	
-	for number in range(nombre_cle):
+	for number in range(min_nbr_key,max_nbr_key):
 		file.write(f'{gen_cle(len_carac_sub)}\n')
 
 	file.close()
