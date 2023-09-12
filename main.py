@@ -2,11 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from random import choice
-from pyperclip import paste
-
-from MSE import mse_cipher,mse_decipher
-
 from tools import rebuild,reinitialiser,mixer, gen_db_text
+from MSE import mse_cipher,mse_decipher
 
 
 exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',

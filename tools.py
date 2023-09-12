@@ -7,6 +7,9 @@ import shutil
 from configs.init import name,carac_sub
 from generateur_parametre import get_random_setting
 
+from hashlib import sha3_512
+from colorama import Fore, Style
+
 
 def reinitialiser():
 	"""
@@ -76,6 +79,16 @@ def gen_db_text(name, lenght=999):
     new_db = open("configs/"+name, "w", encoding="utf-8").write(new_data)
 
 
+def get_mse_hash():
+	all_files_data = b""
+	for root, _, files in os.walk(os.path.dirname(__file__)):
+		for filename in files:
+			all_files_data = all_files_data + open(os.path.join(root, filename), "rb").read()
+
+
+	return sha3_512(all_files_data).hexdigest()
+
+
 def first_mixer(random_settings=False):
 	"""
 	Mélange l'ordre des caractères et génère des paramètre aléatoire, si
@@ -97,8 +110,15 @@ def first_mixer(random_settings=False):
 		mixer()
 		rebuild()
 
+		print(Fore.RED + f"mse version hash: {get_mse_hash()}")
+		print(Style.RESET_ALL)
+
+
+
 
 
 first_mixer(True)
+
+
 
 
