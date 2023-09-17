@@ -11,19 +11,19 @@ Programme de chiffrement de texte par substitution multiple en 3 étapes.
 
 Pour but de recherche et jeu.
 
-**Description du Programme : Chiffrement par Substitution Multiple (MSE)**
+##**Description du Programme : Chiffrement par Substitution Multiple (MSE)**
 
 
 
-**Introduction**
+##**Introduction**
 
 Le programme de Chiffrement à Substitution Multiple (MSE) est conçu pour fournir un chiffrement de texte en utilisant 3 niveaux de substitution de caractères et de complexité. Développé depuis le 22 janvier 2019, le programme propose une approche unique du chiffrement de texte.
 
 
-**I. Initialisation**
+##**I. Initialisation**
 
 
-**BDC (Base de Données de Caractère)**
+##**BDC (Base de Données de Caractère)**
 les fichiers all.txt, light_weight.txt et ultra_light_weight.txt contient les caractères qui vont être utilisés pour substituer les caractères.
 
 Ces caractères sont ensuite divisé en deux groupes:
@@ -41,7 +41,7 @@ Celui devient unique à chaque utilisateur, lorsqu'il chiffre pour la première 
 
 
 
-**II. Générateur de Configuration Aléatoire**
+##**II. Générateur de Configuration Aléatoire**
 
 - Le programme peut générer des paramètres (fichier setting.json) pseudo aléatoires. Les utilisateurs peuvent opter pour la création de configurations aléatoires.
 
@@ -49,7 +49,7 @@ Celui devient unique à chaque utilisateur, lorsqu'il chiffre pour la première 
 
 
 
-**III. Chiffrement**
+##**III. Chiffrement**
 
 - Le processus de chiffrement de base comprend 3 étapes :
 
@@ -61,13 +61,13 @@ Celui devient unique à chaque utilisateur, lorsqu'il chiffre pour la première 
 
 
 
-**IV. Génération de Bibliothèque de Clés**
+##**IV. Génération de Bibliothèque de Clés**
 
 - Le programme génère une bibliothèque de clés de substitution choisit à partir du groupe A.
 
 
 
-**V. Outils**
+##**V. Outils**
 
 - Le fichier tools.py offre des outils essentiels tels que la génération d'une nouvelle BDC, la suppression des clés de chiffrement, le mélange des caractères du fichier BDC actuelle et le nettoyage, suppression des doublons du fichier du fichier BDC.
 
@@ -75,7 +75,7 @@ Celui devient unique à chaque utilisateur, lorsqu'il chiffre pour la première 
 ------------------------------------------------------------
 
 
-**Démo et mise en application**
+##**Démo et mise en application**
 
 exemple de message: hello fish
 Etape 1:
