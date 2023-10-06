@@ -10,7 +10,7 @@ dans une sombre époque du projet était un logiciel payant ;)
 """
 
 from random import randint,choice
-from configs.init import*
+from configs.confing_setting import*
 
 def gen_caractere(x):
 	"""
@@ -54,7 +54,7 @@ def gen_lib_cle(min_nbr_key,max_nbr_key):
 	Génère une librairie de clé
 	"""
 
-	file = open('keylib.keys','w',encoding='utf-8')
+	file = open('keylib.txt','w',encoding='utf-8')
 	
 	for number in range(min_nbr_key,max_nbr_key):
 		file.write(f'{gen_cle(len_carac_sub)}\n')

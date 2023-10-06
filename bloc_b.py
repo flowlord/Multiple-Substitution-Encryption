@@ -7,16 +7,16 @@
 		Chaque carcatère est substituer.
 """
 
-from configs.init import*
+from configs.confing_setting import*
 from random import choice,randint
 import os
 
-if os.path.exists("keylib.keys"):
-	listkey = open('keylib.keys','r',encoding="utf-8").readlines()
+if os.path.exists("keylib.txt"):
+	listkey = open('keylib.txt','r',encoding="utf-8").readlines()
 else:
 	from generateur_cle import gen_lib_cle
 	gen_lib_cle(min_nbr_key,max_nbr_key)
-	listkey = open('keylib.keys','r',encoding="utf-8").readlines()
+	listkey = open('keylib.txt','r',encoding="utf-8").readlines()
 
 
 def cipher(plain_text):

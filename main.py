@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 from random import choice
 from tools import rebuild,reinitialiser,mixer, gen_db_text
 from MSE import mse_cipher,mse_decipher
+from pyperclip import paste
 
-
-exemple_phrases = ['salut agent','ceci est une longue phrase un peut chiante',
-                   'meeting tonight for speak','rendez vous ce soir pour parler',
-				   'hello world','on se voit ce soir','ou habitez vous',
-				   'que faites vous','a bientot','a la semaine prochaine',
-				   'je peux te parler','on peut se voir','jusqu ici tout va bien',
-				   'mec tfk quoi la',
-				   'alors la je fait expres de mettre une tres longue phrase pour des test',
-				   'hallo zusammen heute','mec tfk quoi']
+exemple_phrases = ["The sign said there was road work ahead so he decided to speed up.",
+				   "She couldn't understand why nobody else could see that the sky is full of cotton candy.",
+				   "They looked up at the sky and saw a million stars.",
+				   "He had a hidden stash underneath the floorboards in the back room of the house.",
+				   "He was surprised that his immense laziness was inspirational to others.",
+				   "Someone I know recently combined Maple Syrup & buttered Popcorn thinking it would taste like caramel popcorn.",
+				   "It didn't and they don't recommend anyone else do it either.",
+				   "My Mum tries to be cool by saying that she likes all the same things that I do.",
+				   "She had some amazing news to share but nobody to share it with."]
 
 
 def demo():
@@ -39,7 +39,7 @@ demo()
 #reinitialiser()
 
 # Chiffrer un message
-#message = mse_cipher("Bonjour tous le monde")
+#message = mse_cipher("hello fish")
 #print(message)
 
 # Déchiffrer

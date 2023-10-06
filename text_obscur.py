@@ -15,7 +15,7 @@ C = Combinaision
 
 """
 
-from configs.init import rolling
+from configs.confing_setting import rolling
 
 
 # obscurcissement +
@@ -43,27 +43,13 @@ def C1_inv(t):
 	return start+middle+end
 
 
-
-def C2(t):
-	m = milieu(t)
-	start = t[:m]
-	end = t[m:]
-	return end+start
-	
-def C2_inv(t):
-	m = milieu(t)
-	start = t[m:]
-	end = t[:m]
-	return start+end
-
-
 def inverser_mot(word):
 	n = len(word)
 	
 	if n == 1:
 		return word
 	elif n%2 == 0:
-		return C2(word)
+		return word[n//2:] + word[:n//2]
 	else:
 		return C1(word)
 
@@ -74,7 +60,7 @@ def remettre_mot(word):
 	if n == 1:
 		return word
 	elif n%2 == 0:
-		return C2_inv(word)
+		return word[n//2:] + word[:n//2]
 	else:
 		return C1_inv(word)
 
@@ -103,7 +89,7 @@ def inverser_phrase(msg):
 
 def palm_1(msg):
 
-	for _ in range(11):
+	for _ in range(12):
 		msg = inverser_phrase(msg)
 		msg = inverser_mot(msg)
 
@@ -111,7 +97,7 @@ def palm_1(msg):
 
 
 def palm_1_rev(msg):
-	for _ in range(11):
+	for _ in range(12):
 		msg = remettre_mot(msg)
 		msg = remettre_phrase(msg)
 
@@ -128,5 +114,6 @@ def palm_2_rev(msg):
 	for _ in range(rolling):
 		msg = palm_1_rev(msg)
 	return msg
+
 
 

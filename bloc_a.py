@@ -17,8 +17,6 @@ def complexifier(plain_text):
 
 	plain_text =  plain_text[::-1]
 	plain_text = palm_2(plain_text)
-	plain_text = palm_2(plain_text)
-	plain_text = palm_2(plain_text)
 
 	return plain_text
 
@@ -31,14 +29,7 @@ def complexifier_inv(coded_text):
 	"""
 
 	coded_text = palm_2_rev(coded_text)
-	coded_text = palm_2_rev(coded_text)
-	coded_text = palm_2_rev(coded_text)
 	coded_text =  coded_text[::-1]
 
 	return coded_text
-
-
-
-
-
 

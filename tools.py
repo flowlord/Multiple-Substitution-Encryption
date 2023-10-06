@@ -4,7 +4,7 @@
 import os
 from random import shuffle, choice, randint
 import shutil
-from configs.init import name,carac_sub
+from configs.confing_setting import name,carac_sub
 from generateur_parametre import get_random_setting
 
 from hashlib import sha3_512
@@ -16,8 +16,8 @@ def reinitialiser():
 	Suprime vos clés de chiffrement !
 	"""
 	
-	if os.path.exists("keylib.keys"):
-		os.remove("keylib.keys")
+	if os.path.exists("keylib.txt"):
+		os.remove("keylib.txt")
 	
 	try:
 		shutil.rmtree('__pycache__')
@@ -80,13 +80,13 @@ def gen_db_text(name, lenght=999):
 
 
 def get_mse_hash():
-	all_files_data = b""
+	all_files_datas = b""
 	for root, _, files in os.walk(os.path.dirname(__file__)):
 		for filename in files:
-			all_files_data = all_files_data + open(os.path.join(root, filename), "rb").read()
+			if filename not in ["init.cpython-39.pyc","keylib.txt", "requirement.txt", "user.data","README.md"]:
+				all_files_datas = all_files_datas + open(os.path.join(root, filename), "rb").read()
 
-
-	return sha3_512(all_files_data).hexdigest()
+	return sha3_512(all_files_datas).hexdigest()
 
 
 def first_mixer(random_settings=False):
@@ -118,7 +118,7 @@ def first_mixer(random_settings=False):
 
 
 first_mixer(True)
-get_mse_hash()
+
 
 
 

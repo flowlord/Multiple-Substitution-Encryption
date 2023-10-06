@@ -28,13 +28,15 @@
 	
 	MSE (multiple substitution encryption)
 
+	Enigma Creation Engine
+
 	Créer le mardi 22 janvier 2019 à 01:10 
 
 """
 
 __author__  = "Detrox922"
-__version__ = "26.0.0"
-__date__    = "12 septembre 2023"
+__version__ = "26.4.0"
+__date__    = "28 septembre 2023"
 
 
 from random import randint
@@ -44,41 +46,39 @@ from bloc_a import complexifier,complexifier_inv
 from bloc_b import cipher,decipher
 from bloc_c import ajout_carac_b,enleve_carac_b
 
-from configs.init import*
+from configs.confing_setting import*
 
 
 def mse_cipher(msg,auto_copy=True):
 	"""
-	MESSAGE --> |A| --> |B| -->|C| --> |D| --> |E| --> CODED MESSAGE
+	MESSAGE --> |A| --> |B| -->|C| --> CODED MESSAGE
 	"""
 	a  = complexifier(msg)
 	b = cipher(a)
-	c  = complexifier(b)
-	d = ajout_carac_b(c,randint(min_nbr_key,max_nbr_key))
-	e = cipher(d)
+	c = ajout_carac_b(b,)
 	
 	if auto_copy is True:
-		copy(e)
-	return e
+		copy(c)
+	return c
 
 
 def mse_decipher(msg, auto_copy=False):
 	"""
-	CODED MESSAGE --> |E| --> |D| -->|C| --> |B| --> |A| --> MESSAGE
+	CODED MESSAGE --> |C| --> |B| --> |A| --> MESSAGE
 	"""
 	
-	a = decipher(msg)
-	b = enleve_carac_b(a)
-	c  = complexifier_inv(b)
-	d = decipher(c)
-	e  = complexifier_inv(d)
+	c = decipher(msg)
+	b = enleve_carac_b(c)
+	a  = complexifier_inv(b)
 
 	if auto_copy is True:
-		copy(e)
+		copy(a)
 	
-	return e
+	return a
 
 
 
 
+message = mse_cipher("hello fish")
+print(mse_decipher(message))
 
