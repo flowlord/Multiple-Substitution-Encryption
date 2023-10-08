@@ -44,7 +44,7 @@ from pyperclip import copy
 
 from bloc_a import complexifier,complexifier_inv
 from bloc_b import cipher,decipher
-from bloc_c import ajout_carac_b,enleve_carac_b
+from bloc_c import obscur,enleve_carac_b
 
 from configs.confing_setting import*
 
@@ -55,7 +55,7 @@ def mse_cipher(msg,auto_copy=True):
 	"""
 	a  = complexifier(msg)
 	b = cipher(a)
-	c = ajout_carac_b(b,)
+	c = obscur(b)
 	
 	if auto_copy is True:
 		copy(c)

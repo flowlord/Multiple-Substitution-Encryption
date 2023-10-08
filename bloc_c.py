@@ -35,13 +35,19 @@ def ajout_carac_b(plain_text,x):
 	for _ in range(x):
 		position = randint(0,len(plain_text))
 		
-		plain_text.insert(position, choice(groupe_b))
+		plain_text.insert(position, get_rand_carac_b())
 
 	plain_text = ''.join(plain_text)
 	return plain_text
 
 
 def combiner_chaines_a(string_a, string_b):
+    """
+    exemple:
+    string_a = ACE
+    string_b = BDF
+    ---> ABCDEF
+    """
     string_c = ""
     min_len = min(len(string_a), len(string_b))
 
@@ -57,6 +63,11 @@ def combiner_chaines_a(string_a, string_b):
 
 
 def combiner_chaines_b(string_a):
+    """
+    string_a = ABC
+    string_b = get_rand_groupe_carac_b()
+    ---> AXXBXCXXXXX
+    """
     mini, maxi = 2,50
     
     string_b = get_rand_groupe_carac_b(mini, maxi)
@@ -74,25 +85,15 @@ def combiner_chaines_b(string_a):
     return string_c
 
 
-def combiner_chaines_c(string_a,x):
-
-	for e in range(x):
-		
-		string_b = get_rand_groupe_carac_b(3, 100)
-
-		# Exemples d'utilisation
-		msg_a = combiner_chaines_a(string_a, string_b)
-
-		# Exemple d'utilisation
-		msg_b = combiner_chaines_b(msg_a)
-
-
-	return msg_b
-
-
-def at_final(string):
+def obscur(string):
+	"""
+	note: valeur sans paramètre !
+	"""
+	string = combiner_chaines_a(string,get_rand_groupe_carac_b(4,10))
+	string = combiner_chaines_b(string)
 	string = ajout_carac_b(string,randint(min_nbr_key,max_nbr_key))
-	string = combiner_chaines_c(string,)
+
+	return string
 
 
 def enleve_carac_b(code):
