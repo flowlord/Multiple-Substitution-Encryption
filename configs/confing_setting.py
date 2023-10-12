@@ -35,9 +35,7 @@ if data["cipher accent"] == True:
 	carac_sub = carac_sub+ accent
 
 carac_sub = carac_sub+ ' '
-
 len_carac_sub = len(carac_sub)
-
 
 name = data['substitue with']
 
@@ -47,6 +45,7 @@ if os.path.exists(name) is False:
 
 len_caractere = data['len_caractere']
 longeur_carac_special = data['len_carac_special']
+len_carac_group_b = data["len_carac_group_b"]
 nombre_cle = data['nombre_cle']
 min_nbr_key,max_nbr_key = data['mini'],data['maxi']
 
@@ -58,6 +57,8 @@ groupe_b = groupe_caracteres_initial[milieu:]
 
 
 rolling = data['rolling']
+
+
 
 
 

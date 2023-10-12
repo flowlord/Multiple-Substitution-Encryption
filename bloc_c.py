@@ -25,27 +25,11 @@ def get_rand_groupe_carac_b(mini,maxi):
 	return group_carac
 
 
-def ajout_carac_b(plain_text,x):
-	"""
-		Ajoute de manière aléatoire un caractère du groupe_b
-		dans le code dans une position au hazard, x fois.
-	"""
-	plain_text = list(plain_text)
-	
-	for _ in range(x):
-		position = randint(0,len(plain_text))
-		
-		plain_text.insert(position, get_rand_carac_b())
-
-	plain_text = ''.join(plain_text)
-	return plain_text
-
-
 def combiner_chaines_a(string_a, string_b):
     """
     exemple:
-    string_a = ACE
-    string_b = BDF
+    string_a = A C E
+    string_b = 	B D F
     ---> ABCDEF
     """
     string_c = ""
@@ -85,13 +69,29 @@ def combiner_chaines_b(string_a):
     return string_c
 
 
+def combiner_chaines_c(plain_text,x):
+	"""
+		Ajoute de manière aléatoire un caractère du groupe_b
+		dans le code dans une position au hazard, x fois.
+	"""
+	plain_text = list(plain_text)
+	
+	for _ in range(x):
+		position = randint(0,len(plain_text))
+		
+		plain_text.insert(position, get_rand_carac_b())
+
+	plain_text = ''.join(plain_text)
+	return plain_text
+
+
 def obscur(string):
 	"""
-	note: valeur sans paramètre !
+	Fait passer le texte sur 3 algorithmes.
 	"""
-	string = combiner_chaines_a(string,get_rand_groupe_carac_b(4,10))
+	string = combiner_chaines_a(string,get_rand_groupe_carac_b(len_carac_group_b[0],len_carac_group_b[1]))
 	string = combiner_chaines_b(string)
-	string = ajout_carac_b(string,randint(min_nbr_key,max_nbr_key))
+	string = combiner_chaines_c(string,randint(min_nbr_key,max_nbr_key))
 
 	return string
 
@@ -106,7 +106,6 @@ def enleve_carac_b(code):
 		if element not in groupe_b:
 			new_text = new_text + element  
 	return new_text
-
 
 
 

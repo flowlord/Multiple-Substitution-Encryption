@@ -1,16 +1,17 @@
 {
 
         "cipher": "ascii_letters",
-        "carac_special": "jlZ TTRbMbzrXFeXRZOHvAxbkt",
+        "carac_special": "VsFRYQ Am ZEqNjABitvTemIJv",
         "substitue with": "configs/light_weight.txt",
         "cipher punctuation": "true",
         "cipher accent": "true",
         "cipher digits": "true",
-        "len_caractere": [4,8],
-        "len_carac_special": [2,4],
-        "nombre_cle": [3,39],
-        "mini": 10,
-        "maxi": 99,
-        "rolling":100
+        "len_caractere": [4,6],
+        "len_carac_special": [3,4],
+        "len_carac_group_b":[5,5],
+        "nombre_cle": [3,4],
+        "mini": 24,
+        "maxi": 156,
+        "rolling":165
     
 }

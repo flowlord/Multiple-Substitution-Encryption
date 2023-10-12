@@ -1,11 +1,12 @@
 ![logo](exemple/logo.png)
 
+
 <div align="center">
 
-# PROJET MULTIPLE SUBSTITUTION ENCRYPTION 2 (MSE 2)
+# PROJET MULTIPLE SUBSTITUTION ENCRYPTION (MSE)
 -------------------------------------
 
-Logiciel de chiffrement primitive par substitution multiple avec obscurcissement, pour la création d'énigme.
+Logiciel de chiffrement par substitution multiple avec obscurcissement, pour la création de jeux d'énigme et de recherche.
 
 Chiffrement de texte par substitution multiple en 3 étapes.
 
@@ -75,6 +76,7 @@ Celui devient unique à chaque utilisateur, lorsqu'il chiffre pour la première 
 
 ## VII. MSE MARS ATTACK
 -------------------------------------
+Le programme MSE est un jeux.
 Je vous encourage vivement à particier à la recherche de faille de sécurité
 en rejoinant le programme: [Mars Attack](https://discord.gg/HYpbvBSu)
 
@@ -84,7 +86,7 @@ en rejoinant le programme: [Mars Attack](https://discord.gg/HYpbvBSu)
 ## Démo et mise en application
 -------------------------------------
 
-![image du projet](exemple/captur_demo.PNG)
+![Exemple d'utilisation](exemple/captur_demo.png)
 
 <br>
 
@@ -93,8 +95,9 @@ en rejoinant le programme: [Mars Attack](https://discord.gg/HYpbvBSu)
 
 Exemples de code secret: [codex.vu](https://bit.ly/theclawsofgod)
 
-le monde merveilleux des secrets, des lettres et des chiffres !
+`Ceci est que la base du code, regardez le code d'un autre point de vue et vous pouvez voire des miiliards de possibilité !`
 
+le monde merveilleux des secrets, des lettres et des chiffres !
 
 
 

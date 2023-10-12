@@ -35,8 +35,8 @@
 """
 
 __author__  = "Detrox922"
-__version__ = "26.4.0"
-__date__    = "28 septembre 2023"
+__version__ = "26.5.0"
+__date__    = "13 octobre 2023"
 
 
 from random import randint
@@ -45,7 +45,6 @@ from pyperclip import copy
 from bloc_a import complexifier,complexifier_inv
 from bloc_b import cipher,decipher
 from bloc_c import obscur,enleve_carac_b
-
 from configs.confing_setting import*
 
 
@@ -66,9 +65,8 @@ def mse_decipher(msg, auto_copy=False):
 	"""
 	CODED MESSAGE --> |C| --> |B| --> |A| --> MESSAGE
 	"""
-	
-	c = decipher(msg)
-	b = enleve_carac_b(c)
+	c = enleve_carac_b(msg)
+	b = decipher(c)
 	a  = complexifier_inv(b)
 
 	if auto_copy is True:
@@ -78,7 +76,4 @@ def mse_decipher(msg, auto_copy=False):
 
 
 
-
-message = mse_cipher("hello fish")
-print(mse_decipher(message))
 

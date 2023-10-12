@@ -32,4 +32,3 @@ def complexifier_inv(coded_text):
 	coded_text =  coded_text[::-1]
 
 	return coded_text
-

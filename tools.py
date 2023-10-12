@@ -6,7 +6,6 @@ from random import shuffle, choice, randint
 import shutil
 from configs.confing_setting import name,carac_sub
 from generateur_parametre import get_random_setting
-
 from hashlib import sha3_512
 from colorama import Fore, Style
 
@@ -80,6 +79,9 @@ def gen_db_text(name, lenght=999):
 
 
 def get_mse_hash():
+	"""
+	génère le hash de la version
+	"""
 	all_files_datas = b""
 	for root, _, files in os.walk(os.path.dirname(__file__)):
 		for filename in files:
@@ -114,11 +116,5 @@ def first_mixer(random_settings=False):
 		print(Style.RESET_ALL)
 
 
-
-
-
 first_mixer(True)
-
-
-
 

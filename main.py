@@ -25,8 +25,8 @@ def demo():
 	print('Texte déchiffré:\n')
 	print(mse_decipher(message, False))
 
-
 demo()
+
 
 
 # Mélanger les caractères spéciaux ( avec le jeu de caractère actuelle)
@@ -47,5 +47,7 @@ demo()
 
 #Génère une nouvelle database de text
 #gen_db_text(name, lenght=999)
+
+
 
 
