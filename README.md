@@ -1,5 +1,6 @@
-<div align="center">
 ![logo](exemple/logo.png)
+
+<div align="center">
 
 # PROJET MULTIPLE SUBSTITUTION ENCRYPTION 2 (MSE 2)
 -------------------------------------
