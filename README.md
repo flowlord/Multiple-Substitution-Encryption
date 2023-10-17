@@ -1,5 +1,6 @@
-![logo](exemple/logo.png)
-
+<p align="center">
+  ![logo](exemple/logo.png)
+</p>
 
 <div align="center">
 
