@@ -12,16 +12,13 @@ from configs.confing_setting import*
 from random import choice,randint
 
 
-def get_rand_carac_b():
-	return choice(groupe_b)
-
-
-def get_rand_groupe_carac_b(mini,maxi):
+def get_rand_groupe_carac_b():
+	mini, maxi = len_carac_group_b[0],len_carac_group_b[1]
 	group_carac = ""
 
 	for _ in range(mini,maxi):
-		group_carac = group_carac + get_rand_carac_b()
-	
+		group_carac = group_carac + choice(groupe_b)
+		
 	return group_carac
 
 
@@ -54,7 +51,7 @@ def combiner_chaines_b(string_a):
     """
     mini, maxi = 2,50
     
-    string_b = get_rand_groupe_carac_b(mini, maxi)
+    string_b = get_rand_groupe_carac_b()
     string_c = ""
     min_len = min(len(string_a), len(string_b))
 
@@ -79,7 +76,7 @@ def combiner_chaines_c(plain_text,x):
 	for _ in range(x):
 		position = randint(0,len(plain_text))
 		
-		plain_text.insert(position, get_rand_carac_b())
+		plain_text.insert(position, get_rand_groupe_carac_b())
 
 	plain_text = ''.join(plain_text)
 	return plain_text
@@ -89,9 +86,9 @@ def obscur(string):
 	"""
 	Fait passer le texte sur 3 algorithmes.
 	"""
-	string = combiner_chaines_a(string,get_rand_groupe_carac_b(len_carac_group_b[0],len_carac_group_b[1]))
+	string = combiner_chaines_a(string,get_rand_groupe_carac_b())
 	string = combiner_chaines_b(string)
-	string = combiner_chaines_c(string,randint(min_nbr_key,max_nbr_key))
+	string = combiner_chaines_c(string,randint(min_add_group_b,min_add_group_b))
 
 	return string
 
@@ -106,6 +103,7 @@ def enleve_carac_b(code):
 		if element not in groupe_b:
 			new_text = new_text + element  
 	return new_text
+
 
 
 

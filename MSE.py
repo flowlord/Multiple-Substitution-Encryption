@@ -35,17 +35,18 @@
 """
 
 __author__  = "Detrox922"
-__version__ = "26.5.0"
-__date__    = "13 octobre 2023"
+__version__ = "26.6.0_instable"
+__date__    = "17 octobre 2023"
 
 
 from random import randint
 from pyperclip import copy
 
+from configs.confing_setting import*
+
 from bloc_a import complexifier,complexifier_inv
 from bloc_b import cipher,decipher
 from bloc_c import obscur,enleve_carac_b
-from configs.confing_setting import*
 
 
 def mse_cipher(msg,auto_copy=True):
@@ -74,6 +75,10 @@ def mse_decipher(msg, auto_copy=False):
 	
 	return a
 
-
-
+"""
+m = "The sign said there was road work ahead so he decided to speed up."
+m = mse_cipher(m,False)
+print(m)
+print(mse_decipher(m,False))
+"""
 

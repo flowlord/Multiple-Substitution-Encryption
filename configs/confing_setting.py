@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# K£rn£l
 
 from string import ascii_lowercase,ascii_uppercase, ascii_letters, digits, punctuation
 import json
@@ -8,9 +9,7 @@ from random import shuffle
 
 accent = 'ÄÀÂÉÈÊËÎÏÔÙÛÜÇàâéèêëîïôùûüç'
 
-file = open('configs/setting.json', 'r')
-data = json.load(file)
-file.close()
+data = json.load(open('configs/setting.json', 'r'))
 
 carac_sub = data['cipher']
 
@@ -45,10 +44,9 @@ if os.path.exists(name) is False:
 
 len_caractere = data['len_caractere']
 longeur_carac_special = data['len_carac_special']
-len_carac_group_b = data["len_carac_group_b"]
 nombre_cle = data['nombre_cle']
-min_nbr_key,max_nbr_key = data['mini'],data['maxi']
-
+len_carac_group_b = data["len_carac_group_b"]
+min_add_group_b,max_add_group_b = data['mini'],data['maxi']
 
 groupe_caracteres_initial = "".join(open(name,'r',encoding='utf-8').readlines())
 milieu = int(len(groupe_caracteres_initial)/2)

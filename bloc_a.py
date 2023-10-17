@@ -7,7 +7,7 @@
 		servant à modifier le text entré.
 """
 
-from text_obscur import palm_2,palm_2_rev
+from text_obscur import process_sentence
 
 def complexifier(plain_text):
 	"""
@@ -16,7 +16,7 @@ def complexifier(plain_text):
 	"""
 
 	plain_text =  plain_text[::-1]
-	plain_text = palm_2(plain_text)
+	plain_text = process_sentence(plain_text,True)
 
 	return plain_text
 
@@ -28,7 +28,7 @@ def complexifier_inv(coded_text):
 			rowdl lehol ---> hello world
 	"""
 
-	coded_text = palm_2_rev(coded_text)
+	coded_text = process_sentence(coded_text,False)
 	coded_text =  coded_text[::-1]
 
 	return coded_text
