@@ -1,5 +1,5 @@
 <p align="center">
-  ![logo](exemple/logo.png)
+  <img src="exemple/logo.png" />
 </p>
 
 <div align="center">
