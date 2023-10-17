@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from random import choice
-from tools import rebuild,reinitialiser,mixer, gen_db_text
+from tools import rebuild,reinitialiser, gen_db_text
 from MSE import mse_cipher,mse_decipher
 from pyperclip import paste
 
@@ -27,16 +27,11 @@ def demo():
 
 demo()
 
-
-
-# Mélanger les caractères spéciaux ( avec le jeu de caractère actuelle)
-#mixer()
+# Pour supprimer les clés de chiffrement
+#reinitialiser()
 
 # Reconstruit le jeu de caractère actuelle
 #rebuild()
-
-# Pour supprimer les clés de chiffrement
-#reinitialiser()
 
 # Chiffrer un message
 #message = mse_cipher("hello fish")
@@ -46,7 +41,7 @@ demo()
 #print(mse_decipher(message))
 
 #Génère une nouvelle database de text
-#gen_db_text(name, lenght=999)
+#gen_db_text(name, lenght=3000)
 
 
 

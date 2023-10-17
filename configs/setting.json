@@ -1,17 +1,17 @@
 {
 
         "cipher": "ascii_letters",
-        "carac_special": "VsFRYQ Am ZEqNjABitvTemIJv",
-        "substitue with": "configs/all.txt",
+        "carac_special": "wUEMzYQzQdsVURLaMAqpkfVrFc",
+        "substitue with": "configs/ultra_light_weight.txt",
         "cipher punctuation": "true",
         "cipher accent": "true",
         "cipher digits": "true",
-        "len_caractere": [4,6],
+        "len_caractere": [4,5],
         "len_carac_special": [3,4],
-        "len_carac_group_b":[5,5],
-        "nombre_cle": [3,4],
+        "nombre_cle": [3,74],
+        "len_carac_group_b":[5,8],
         "mini": 24,
-        "maxi": 156,
-        "rolling":165
+        "maxi": 76,
+        "rolling":108
     
 }

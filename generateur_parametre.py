@@ -46,7 +46,7 @@ def gen(db):
     max_add_carac_b = randint(min_add_carac_b+1,200)
 
     min_len_carac_group_b = randint(4,5)
-    max_len_carac_group_b = randint(min_len_carac_group_b,5)
+    max_len_carac_group_b = randint(min_len_carac_group_b,10)
 
     rolling_min = 100
     rolling_max = 500
@@ -60,8 +60,8 @@ def gen(db):
         "cipher digits": "true",
         "len_caractere": [{min_lenght_carc},{max_lenght_carc}],
         "len_carac_special": [{min_lenght_carac_special},{max_lenght_carac_special}],
-        "len_carac_group_b":[{min_len_carac_group_b},{max_len_carac_group_b}],
         "nombre_cle": [{min_nbr_key},{max_nbr_key}],
+        "len_carac_group_b":[{min_len_carac_group_b},{max_len_carac_group_b}],
         "mini": {min_add_carac_b},
         "maxi": {max_add_carac_b},
         "rolling":{randint(rolling_min,rolling_max)}

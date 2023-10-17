@@ -15,7 +15,7 @@ if os.path.exists("keylib.txt"):
 	listkey = open('keylib.txt','r',encoding="utf-8").readlines()
 else:
 	from generateur_cle import gen_lib_cle
-	gen_lib_cle(min_nbr_key,max_nbr_key)
+	gen_lib_cle(nombre_cle[0],nombre_cle[1])
 	listkey = open('keylib.txt','r',encoding="utf-8").readlines()
 
 
