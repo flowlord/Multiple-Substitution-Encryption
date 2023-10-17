@@ -86,7 +86,7 @@ en rejoinant le programme: [Mars Attack](https://discord.gg/HYpbvBSu)
 ## Démo et mise en application
 -------------------------------------
 
-![Exemple d'utilisation](exemple/captur_demo.png)
+![Exemple d'utilisation](exemple/captur_demo.PNG)
 
 <br>
 
