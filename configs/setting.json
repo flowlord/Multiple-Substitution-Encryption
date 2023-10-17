@@ -2,7 +2,7 @@
 
         "cipher": "ascii_letters",
         "carac_special": "wUEMzYQzQdsVURLaMAqpkfVrFc",
-        "substitue with": "configs/ultra_light_weight.txt",
+        "substitue with": "configs/all.txt",
         "cipher punctuation": "true",
         "cipher accent": "true",
         "cipher digits": "true",
