@@ -4,7 +4,8 @@
 import os
 from random import shuffle, choice, randint
 import shutil
-from configs.confing_setting import name,carac_sub
+
+from configs.configs_setting import name,carac_sub
 from generateur_parametre import get_random_setting
 from hashlib import sha3_512
 from colorama import Fore, Style
@@ -67,7 +68,7 @@ def rebuild():
 	open(name,'w',encoding='utf-8').write(new_carac)
 
 
-def gen_db_text(name, lenght=999):
+def gen_db_text(name, lenght=3000):
     """
     Génère une nouvelle database de text
 	exemple: gen_db_text("configs/light_weight",500)
@@ -102,9 +103,6 @@ def first_mixer(random_settings=False):
 
 		db = choice(["light_weight.txt", "ultra_light_weight.txt"])
 
-		f = open("user.data", "w")
-		f.close()
-
 		if random_settings is True:
 			get_random_setting(db)
 		
@@ -112,8 +110,14 @@ def first_mixer(random_settings=False):
 		mixer()
 		rebuild()
 
-		print(Fore.RED + f"mse version hash: {get_mse_hash()}")
+		mse_version_hash = get_mse_hash()
+
+		print(Fore.RED + f"mse version hash: {mse_version_hash}")
 		print(Style.RESET_ALL)
+
+		f = open("user.data", "w")
+		f.write(mse_version_hash)
+		f.close()
 
 
 first_mixer(True)

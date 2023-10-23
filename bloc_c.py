@@ -8,7 +8,7 @@
 """
 
 
-from configs.confing_setting import*
+from configs.configs_setting import*
 from random import choice,randint
 
 

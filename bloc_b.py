@@ -7,8 +7,8 @@
 		Chaque carcatère est substituer.
 """
 
-from configs.confing_setting import*
-from random import choice,randint
+from configs.configs_setting import*
+from random import choice
 import os
 
 if os.path.exists("keylib.txt"):

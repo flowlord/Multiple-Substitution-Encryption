@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
+# GENESIS KEY
 
 """
 librairie de clé = keylib
@@ -10,7 +11,7 @@ dans une sombre époque du projet était un logiciel payant ;)
 """
 
 from random import randint,choice
-from configs.confing_setting import*
+from configs.configs_setting import*
 
 def gen_caractere(x):
 	"""
@@ -60,5 +61,4 @@ def gen_lib_cle(min_nbr_key,max_nbr_key):
 		file.write(f'{gen_cle(len_carac_sub)}\n')
 
 	file.close()
-
 

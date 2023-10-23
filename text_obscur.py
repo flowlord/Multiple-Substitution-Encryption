@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from configs.confing_setting import rolling
-
-
 def split_word(word):
     """
     Sépare le mot en fonction de sa longueur.
@@ -40,5 +37,3 @@ def process_sentence(sentence, inverse):
         return ' '.join([reverse_word(word) for word in sentence.split(" ")])
     else:
         return ' '.join([revert_word(word) for word in sentence.split(" ")])
-
-
