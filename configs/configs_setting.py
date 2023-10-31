@@ -12,10 +12,10 @@ def gen_default_setting():
 {
         "cipher": "ascii_letters",
         "carac_special": "easintrluodchEASINTRLUODCH0123456789!#$%&'()*+,-./:;<=>?\\"@[\\\]",
-        "substitue with": "configs/all.txt",
-        "cipher punctuation": "True",
-        "cipher accent": "True",
-        "cipher digits": "True",
+        "substitue_with": "configs/all.txt",
+        "cipher_punctuation": "True",
+        "cipher_accent": "True",
+        "cipher_digits": "True",
         "len_caractere": [6,9],
         "len_carac_special": [3,6],
         "nombre_cle": [3,50],
@@ -55,23 +55,23 @@ else:
 
 msg_error_uknown_value = 'MSE ERROR: uknown value (only True or False)'
 
-if data["cipher punctuation"] == "True":
+if data["cipher_punctuation"] == "True":
 	carac_sub = carac_sub+ punctuation
-elif data["cipher punctuation"] == "False":
+elif data["cipher_punctuation"] == "False":
         pass
 else:
 	raise Exception(msg_error_uknown_value)
 
-if data["cipher digits"] == "True":
+if data["cipher_digits"] == "True":
 	carac_sub = carac_sub+ digits
-elif data["cipher digits"] == "False":
+elif data["cipher_digits"] == "False":
         pass
 else:
 	raise Exception(msg_error_uknown_value)
 
-if data["cipher accent"] == "True":
+if data["cipher_accent"] == "True":
 	carac_sub = carac_sub+ accent
-elif data["cipher accent"] == "False":
+elif data["cipher_accent"] == "False":
         pass
 else:
 	raise Exception(msg_error_uknown_value)
@@ -80,7 +80,7 @@ else:
 carac_sub = carac_sub+ ' '
 len_carac_sub = len(carac_sub)
 
-name = data['substitue with']
+name = data['substitue_with']
 
 
 if os.path.exists(name) is False:
