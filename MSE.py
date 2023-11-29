@@ -18,7 +18,6 @@
 # IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
 # OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-
 	███╗   ███╗  ██████╗ ███████╗
 	████╗ ████║ ██╔════╝ ██╔════╝
 	██╔████╔██║ ╚█████╗  █████╗
@@ -28,32 +27,28 @@
 	
 	MSE (multiple substitution encryption)
 
-	Puzzle Creation Game Engine
+	Game engine for puzzle creation
 
-	Créer le mardi 22 janvier 2019 à 01:10 
+	Created on Tuesday, January 22nd, 2019 at 01:10
 
 """
 
 __author__  = "Enron Group"
-__version__ = "26.6.0"
-__date__    = "23 octobre 2023"
+__version__ = "27.0.0"
+__date__    = "November 23, 2023"
 
 
 from random import randint
 from pyperclip import copy
-
 from configs.configs_setting import*
-
-from bloc_a import complexifier,complexifier_inv
+from bloc_a import complexify,decomplexify
 from bloc_b import cipher,decipher
-from bloc_c import obscur,enleve_carac_b
+from bloc_c import obscur,remove_group_charac_b
 
 
 def mse_cipher(msg,auto_copy=True):
-	"""
-	MESSAGE --> |A| --> |B| -->|C| --> CODED MESSAGE
-	"""
-	a  = complexifier(msg)
+
+	a  = complexify(msg)
 	b = cipher(a)
 	c = obscur(b)
 	
@@ -63,17 +58,12 @@ def mse_cipher(msg,auto_copy=True):
 
 
 def mse_decipher(msg, auto_copy=False):
-	"""
-	CODED MESSAGE --> |C| --> |B| --> |A| --> MESSAGE
-	"""
-	c = enleve_carac_b(msg)
+
+	c = remove_group_charac_b(msg)
 	b = decipher(c)
-	a  = complexifier_inv(b)
+	a  = decomplexify(b)
 
 	if auto_copy is True:
 		copy(a)
 	
 	return a
-
-
-

@@ -5,99 +5,100 @@
 from string import ascii_lowercase,ascii_uppercase, ascii_letters, digits, punctuation
 import json
 import os.path
-from random import shuffle
 
-def gen_default_setting():
+
+def gen_default_settings():
 	data = """
 {
         "cipher": "ascii_letters",
-        "carac_special": "easintrluodchEASINTRLUODCH0123456789!#$%&'()*+,-./:;<=>?\\"@[\\\]",
+        "special_charac": "easintrluodchEASINTRLUODCH0123456789!#$%&'()*+,-./:;<=>?@[]",
         "substitue_with": "configs/all.txt",
         "cipher_punctuation": "True",
         "cipher_accent": "True",
         "cipher_digits": "True",
-        "len_caractere": [6,9],
-        "len_carac_special": [3,6],
-        "nombre_cle": [3,50],
-        "len_carac_group_b":[4,10],
-        "mini": 24,
-        "maxi": 300
+        "charac_len": [6,9],
+        "len_special_charac": [3,6],
+        "key_number": [3,50],
+        "len_charac_group_b":[4,10],
+        "mini_add_group_b_charac": 24,
+        "max_add_group_b_charac": 300
 }
 """
-	f = open("configs/setting.json", "w", encoding="utf-8")
+	settings_file = open("configs/setting.json", "w", encoding="utf-8")
 
-	f.write(data)
+	settings_file.write(data)
 
-	f.close()
+	settings_file.close()
 
 if os.path.exists("configs/setting.json") is False:
-	gen_default_setting()
+	gen_default_settings()
 
 
-accent = 'ÄÀÂÉÈÊËÎÏÔÙÛÜÇàâéèêëîïôùûüç'
+accent = "ÄÀÂÉÈÊËÎÏÔÙÛÜÇàâéèêëîïôùûüç"
 
-data = json.load(open('configs/setting.json', 'r'))
+data = json.load(open("configs/setting.json", "r"))
 
-carac_sub = data['cipher']
+charac_sub = data["cipher"]
 
-carac_special = data['carac_special']
+special_charac = data["special_charac"]
+special_charac = special_charac + '"\\'
 
 
-if data['cipher'] == 'ascii_lowercase':
-	carac_sub = ascii_lowercase
-elif data['cipher'] == 'ascii_uppercase':
-	carac_sub = ascii_uppercase
-elif data['cipher'] == 'ascii_letters':
-	carac_sub = ascii_letters
+if data["cipher"] == "ascii_lowercase":
+	charac_sub = ascii_lowercase
+elif data["cipher"] == "ascii_uppercase":
+	charac_sub = ascii_uppercase
+elif data["cipher"] == "ascii_letters":
+	charac_sub = ascii_letters
 else:
-	raise Exception('MSE ERROR: uknown cipher option')
+	raise Exception("MSE ERROR: uknown cipher option")
 
 
-msg_error_uknown_value = 'MSE ERROR: uknown value (only True or False)'
+msg_error_uknown_value = "MSE ERROR: uknown value (only True or False)"
 
 if data["cipher_punctuation"] == "True":
-	carac_sub = carac_sub+ punctuation
+	charac_sub = charac_sub+ punctuation
 elif data["cipher_punctuation"] == "False":
         pass
 else:
 	raise Exception(msg_error_uknown_value)
 
 if data["cipher_digits"] == "True":
-	carac_sub = carac_sub+ digits
+	charac_sub = charac_sub+ digits
 elif data["cipher_digits"] == "False":
         pass
 else:
 	raise Exception(msg_error_uknown_value)
 
 if data["cipher_accent"] == "True":
-	carac_sub = carac_sub+ accent
+	charac_sub = charac_sub+ accent
 elif data["cipher_accent"] == "False":
         pass
 else:
 	raise Exception(msg_error_uknown_value)
 
 
-carac_sub = carac_sub+ ' '
-len_carac_sub = len(carac_sub)
-
-name = data['substitue_with']
+charac_sub = charac_sub+ " "
+len_charac_sub = len(charac_sub)
+name = data["substitue_with"]
 
 
 if os.path.exists(name) is False:
-	raise Exception('MSE ERROR: carac file name not found')
+	raise Exception("MSE ERROR: charac file name not found")
 
 
-len_caractere = data['len_caractere']
-longeur_carac_special = data['len_carac_special']
-nombre_cle = data['nombre_cle']
-len_carac_group_b = data["len_carac_group_b"]
-min_add_group_b,max_add_group_b = data['mini'],data['maxi']
+charac_len = data["charac_len"]
+len_special_charac = data["len_special_charac"]
+key_number = data["key_number"]
+len_charac_group_b = data["len_charac_group_b"]
+mini_add_group_b_charac,maxi_add_group_b_charac = data["mini_add_group_b_charac"],data["max_add_group_b_charac"]
 
 
-groupe_caracteres_initial = "".join(open(name,'r',encoding='utf-8').readlines())
-milieu = int(len(groupe_caracteres_initial)/2)
-groupe_a = groupe_caracteres_initial[:milieu]
-groupe_b = groupe_caracteres_initial[milieu:]
+init_charac_group = "".join(open(name,"r",encoding="utf-8").readlines())
+middle = int(len(init_charac_group)/2)
+group_a = init_charac_group[:middle]
+group_b = init_charac_group[middle:]
+
 
 
 

@@ -4,12 +4,17 @@
 
 <div align="center">
 
-# PROJET MULTIPLE SUBSTITUTION ENCRYPTION (MSE)
--------------------------------------
+  # PROJET MULTIPLE SUBSTITUTION ENCRYPTION (MSE)
+  -------------------------------------
 
-Logiciel de chiffrement par substitution multiple avec obscurcissement, pour la création de jeux d'énigme et de recherche.
+  Logiciel de chiffrement par substitution multiple avec obscurcissement, pour la création de jeux d'énigme et de recherche.
 
-Chiffrement de texte par substitution multiple en 3 étapes.
+  Chiffrement de texte par substitution multiple en 3 étapes.
+
+  Nom de version: CRC XXVII [ Complex Urulu ]
+  Auteur: Enron Group
+  version: 27.0.0
+  date: 23 novembre 2023
 
 </div>
 
@@ -98,7 +103,7 @@ Exemples de code secret: [codex.vu](https://bit.ly/theclawsofgod)
 
 `Ceci est que la base du code, regardez le code d'un autre point de vue et vous pouvez voire des miiliards de possibilité !`
 
-le monde merveilleux des secrets, des lettres et des chiffres !
-
-
+<div align="center">
+  le monde merveilleux des secrets, des lettres et des chiffres !
+</div>
 

@@ -4,37 +4,31 @@
 import os
 from random import shuffle, choice, randint
 import shutil
-
-from configs.configs_setting import name,carac_sub
-from generateur_parametre import get_random_setting
+from configs.configs_setting import name,charac_sub
+from settings_generator import get_random_setting
 from hashlib import sha3_512
 from colorama import Fore, Style
 
 
-def reinitialiser():
-	"""
-	Suprime vos clés de chiffrement !
-	"""
-	
+def reset():
+
 	if os.path.exists("keylib.txt"):
 		os.remove("keylib.txt")
-	
 	try:
-		shutil.rmtree('__pycache__')
-		shutil.rmtree('configs/__pycache__')
+		shutil.rmtree("__pycache__")
+		shutil.rmtree("configs/__pycache__")
 	except FileNotFoundError:
 		pass
 
 
 def mixer():
 	"""
-	Mélange l'ordre des caractères
-	example:
-		AAAZZZ ---> | mixer | ---> ZAAZAZ
+		example:
+			AAAZZZ ---> | mixer | ---> ZAAZAZ
 	"""
-	reinitialiser()
+	reset()
 	
-	init = open(name,'r',encoding='utf-8').readlines()
+	init = open(name,"r",encoding="utf-8").readlines()
 	init = "".join(init)
 	init = list(init)
 
@@ -42,61 +36,61 @@ def mixer():
 
 	res = "".join(init)
 
-	f = open(name,'w',encoding='utf-8')
+	f = open(name,"w",encoding="utf-8")
 	f.write(res)
 	f.close()
 
 
 def rebuild():
 	"""
-	reconstruit le fichier des caractères spéciaux
-	en supriment les doublons et aussi les caractères
-	indiqués dans carac_sub
+		Rebuilds the special characters file (substitue_with setting)
+		deleting duplicates and also the characters
+		indicated in charac_sub
 	"""
-	reinitialiser()
+	reset()
 	
-	old_carac = open(name,'r',encoding='utf-8').read()
+	old_carac = open(name,"r",encoding="utf-8").read()
 	new_carac = []
 	
 	for e in old_carac:
-		if e not in carac_sub and e not in new_carac:
+		if e not in charac_sub and e not in new_carac:
 			if e != "\n":
 				new_carac.append(e)
 	
 	new_carac = "".join(new_carac)
 	
-	open(name,'w',encoding='utf-8').write(new_carac)
+	open(name,"w",encoding="utf-8").write(new_carac)
 
 
 def gen_db_text(name, lenght=3000):
     """
-    Génère une nouvelle database de text
-	exemple: gen_db_text("configs/light_weight",500)
+    	Generates a new text database
+		example: gen_db_text("configs/light_weight",500)
     """
     rg = open("configs/all.txt", "r", encoding="utf-8").read()
 
     new_data = rg[0:lenght]
-    new_db = open("configs/"+name, "w", encoding="utf-8").write(new_data)
+    open("configs/"+name, "w", encoding="utf-8").write(new_data)
 
 
 def get_mse_hash():
 	"""
-	génère le hash de la version
+		Generates the project hash
 	"""
 	all_files_datas = b""
 	for root, _, files in os.walk(os.path.dirname(__file__)):
 		for filename in files:
-			if filename not in ["init.cpython-39.pyc","keylib.txt", "requirement.txt", "user.data","README.md"]:
-				all_files_datas = all_files_datas + open(os.path.join(root, filename), "rb").read()
+			if filename not in ["requirement.txt", "user.data","README.md"]:
+				if "cpython" not in filename:
+					all_files_datas = all_files_datas + open(os.path.join(root, filename), "rb").read()
 
 	return sha3_512(all_files_datas).hexdigest()
 
 
 def first_mixer(random_settings=False):
 	"""
-	Mélange l'ordre des caractères et génère des paramètre aléatoire, si
-	l'utilisateur utilise pour la première fois
-	le programme.
+		Mixes character order and generates random parameters,
+		if the user is using the program for the first time.
 	"""
 
 	if os.path.exists("user.data") is False:
@@ -106,19 +100,19 @@ def first_mixer(random_settings=False):
 		if random_settings is True:
 			get_random_setting(db)
 		
-		gen_db_text(db, randint(150,len(open("configs/all.txt", "r", encoding="utf-8").read())))
+		gen_db_text(db, randint(250,len(open("configs/all.txt", "r", encoding="utf-8").read())))
 		mixer()
 		rebuild()
 
 		mse_version_hash = get_mse_hash()
 
-		print(Fore.RED + f"mse version hash: {mse_version_hash}")
+		print(Fore.RED + f"MSE version hash: {mse_version_hash}")
 		print(Style.RESET_ALL)
 
 		f = open("user.data", "w")
 		f.write(mse_version_hash)
 		f.close()
 
-
 first_mixer(True)
+
 
