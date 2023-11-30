@@ -12,9 +12,13 @@
   Chiffrement de texte par substitution multiple en 3 étapes.
 
   Nom de version: CRC XXVII [ Complex Urulu ]
+  
   Auteur: Enron Group
+  
   version: 27.0.0
+  
   date: 23 novembre 2023
+  
 
 </div>
 
