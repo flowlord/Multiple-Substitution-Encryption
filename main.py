@@ -28,7 +28,7 @@ def demo():
 	print(mse_decipher(message, False))
 
 
-#demo()
+demo()
 
 #	Chiffrer un message
 #message = mse_cipher("hello fish", True)
