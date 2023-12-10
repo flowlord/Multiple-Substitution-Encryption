@@ -15,7 +15,7 @@
   
   Auteur: Enron Group
   
-  version: 27.0.0
+  version: 27.0.1
   
   date: 23 novembre 2023
   

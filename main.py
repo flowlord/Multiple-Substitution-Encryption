@@ -40,15 +40,5 @@ demo()
 #	Pour supprimer les clés de chiffrement
 #reset()
 
-# Pour mélanger le fichier all.txt
-#mixer()
-
-#	Reconstruit le jeu de caractère actuelle
-#rebuild()
-
-#	Génère une nouvelle database de text
-#gen_db_text(name, lenght=3000)
-
-
 
 

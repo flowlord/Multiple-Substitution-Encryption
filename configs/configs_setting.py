@@ -30,7 +30,7 @@ def gen_default_settings():
 
 	settings_file.close()
 
-if os.path.exists("configs/setting.json") is False:
+if os.path.exists("setting.json") is False:
 	gen_default_settings()
 
 
@@ -86,10 +86,12 @@ name = data["substitue_with"]
 if os.path.exists(name) is False:
 	raise Exception("MSE ERROR: charac file name not found")
 
+len_db_all = len(open("configs/all.txt", "r", encoding="utf-8").read())
 
 charac_len = data["charac_len"]
 len_special_charac = data["len_special_charac"]
 key_number = data["key_number"]
+
 len_charac_group_b = data["len_charac_group_b"]
 mini_add_group_b_charac,maxi_add_group_b_charac = data["mini_add_group_b_charac"],data["max_add_group_b_charac"]
 
@@ -98,7 +100,5 @@ init_charac_group = "".join(open(name,"r",encoding="utf-8").readlines())
 middle = int(len(init_charac_group)/2)
 group_a = init_charac_group[:middle]
 group_b = init_charac_group[middle:]
-
-
 
 
