@@ -20,18 +20,18 @@ def demo():
 	print("---------- * DEMO * ----------\n")
 	
 	print(Fore.RED +"Encrypted text:\n"+Style.RESET_ALL)
-	message = mse_cipher(choice(example_sentences), True)
+	message = mse_cipher(choice(example_sentences))
 
 	print(message,"\n\n")
 
 	print(Fore.GREEN +"Decrypted text:\n"+Style.RESET_ALL)
-	print(mse_decipher(message, False))
+	print(mse_decipher(message))
 
 
 demo()
 
 #	Chiffrer un message
-#message = mse_cipher("hello fish", True)
+#message = mse_cipher("hello fish")
 #print(message)
 
 #	Déchiffrer
