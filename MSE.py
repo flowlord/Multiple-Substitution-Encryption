@@ -39,31 +39,25 @@ __date__    = "November 23, 2023"
 
 
 from random import randint
-from pyperclip import copy
 from configs.configs_setting import*
 from bloc_a import complexify,decomplexify
 from bloc_b import cipher,decipher
 from bloc_c import obscur,remove_group_charac_b
 
 
-def mse_cipher(msg,auto_copy=True):
+def mse_cipher(msg):
 
 	a  = complexify(msg)
 	b = cipher(a)
 	c = obscur(b)
 	
-	if auto_copy is True:
-		copy(c)
 	return c
 
 
-def mse_decipher(msg, auto_copy=False):
+def mse_decipher(msg):
 
 	c = remove_group_charac_b(msg)
 	b = decipher(c)
 	a  = decomplexify(b)
-
-	if auto_copy is True:
-		copy(a)
 	
 	return a
