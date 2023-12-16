@@ -98,6 +98,8 @@ en rejoinant le programme: [Mars Attack](https://discord.gg/HYpbvBSu)
 
 ![Exemple d'utilisation](exemple/captur_demo.PNG)
 
+Testez le google colab maintenant pour un petit aperçu: [ici](https://colab.research.google.com/drive/1WWT81_UlmaZ9kKG6FbfdQ-ac4muXzYBf?usp=sharing)
+
 <br>
 
 ##  Ressources
