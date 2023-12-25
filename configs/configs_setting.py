@@ -30,7 +30,9 @@ def gen_default_settings():
 
 	settings_file.close()
 
-if os.path.exists("setting.json") is False:
+try:
+	open("setting.json", "w", encoding="utf-8")
+except FileNotFoundError:
 	gen_default_settings()
 
 
