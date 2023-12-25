@@ -31,7 +31,7 @@ def gen_default_settings():
 	settings_file.close()
 
 try:
-	open("setting.json", "w", encoding="utf-8")
+	open("configs/setting.json", "r", encoding="utf-8")
 except FileNotFoundError:
 	gen_default_settings()
 
