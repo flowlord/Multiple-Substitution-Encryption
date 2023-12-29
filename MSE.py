@@ -34,8 +34,8 @@
 """
 
 __author__  = "Enron Group"
-__version__ = "27.0.0"
-__date__    = "November 23, 2023"
+__version__ = "27.0.3"
+__date__    = "29 décembre 2023"
 
 
 from random import randint
