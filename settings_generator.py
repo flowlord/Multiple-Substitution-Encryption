@@ -11,8 +11,8 @@ def gen(db):
     min_len_carac_special = 3
     max_len_carac_special = 4
 
-    min_nbr_key = 3
-    max_nbr_key = randint(min_nbr_key+1,50)
+    min_nbr_key = 1000
+    max_nbr_key = randint(min_nbr_key+1,5000)
 
     min_add_carac_b = 7
     max_add_carac_b = randint(min_add_carac_b+1,10)
