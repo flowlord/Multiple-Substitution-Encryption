@@ -18,9 +18,6 @@ def reset():
 	if os.path.exists("user.data"):
 		os.remove("user.data")
 	
-	if os.path.exists("configs/setting.json"):
-		os.remove("configs/setting.json")
-
 	if os.path.exists("configs/light_weight.txt"):
 		os.remove("configs/light_weight.txt")
 
@@ -104,7 +101,7 @@ def get_mse_hash():
 	return sha3_512(all_files_datas).hexdigest()
 
 
-def first_mixer(random_settings=False):
+def first_mixer():
 	"""
 		Mixes character order and generates random parameters,
 		if the user is using the program for the first time.
@@ -112,10 +109,9 @@ def first_mixer(random_settings=False):
 
 	if os.path.exists("user.data") is False:
 
-		db = choice(["light_weight.txt", "ultra_light_weight.txt"])
+		db = "all.txt"
 
-		if random_settings is True:
-			get_random_setting(db)
+		get_random_setting(db)
 		
 		gen_db_text(db, randint(250,len(open("configs/all.txt", "r", encoding="utf-8").read())))
 		mixer()
@@ -130,6 +126,4 @@ def first_mixer(random_settings=False):
 		f.write(mse_version_hash)
 		f.close()
 
-first_mixer(True)
-
-
+first_mixer()
