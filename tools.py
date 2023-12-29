@@ -4,7 +4,7 @@
 import os
 from random import shuffle, choice, randint
 import shutil
-from configs.configs_setting import charac_sub, len_db_all
+from configs.configs_setting import name,charac_sub
 from settings_generator import get_random_setting
 from hashlib import sha3_512
 from colorama import Fore, Style
@@ -38,14 +38,14 @@ def reset():
 		pass
 
 
-def mixer(db):
+def mixer():
 	"""
 		example:
 			AAAZZZ ---> | mixer | ---> ZAAZAZ
-		USE BEFORE GENERATE KEYS !
 	"""
-
-	init = open(db,"r",encoding="utf-8").readlines()
+	reset()
+	
+	init = open(name,"r",encoding="utf-8").readlines()
 	init = "".join(init)
 	init = list(init)
 
@@ -53,20 +53,20 @@ def mixer(db):
 
 	res = "".join(init)
 
-	f = open(db,"w",encoding="utf-8")
+	f = open(name,"w",encoding="utf-8")
 	f.write(res)
 	f.close()
 
 
-def rebuild(db):
+def rebuild():
 	"""
 		Rebuilds the special characters file (substitue_with setting)
 		deleting duplicates and also the characters
 		indicated in charac_sub
-		USE BEFORE GENERATE KEYS !
 	"""
+	reset()
 	
-	old_carac = open(db,"r",encoding="utf-8").read()
+	old_carac = open(name,"r",encoding="utf-8").read()
 	new_carac = []
 	
 	for e in old_carac:
@@ -76,21 +76,18 @@ def rebuild(db):
 	
 	new_carac = "".join(new_carac)
 	
-	open(db,"w",encoding="utf-8").write(new_carac)
+	open(name,"w",encoding="utf-8").write(new_carac)
 
 
-def gen_db_text(name, lenght):
-	"""
-		Generates a new text database
+def gen_db_text(name, lenght=3000):
+    """
+    	Generates a new text database
 		example: gen_db_text("configs/light_weight",500)
-	"""
-	rg = open("configs/all.txt", "r", encoding="utf-8").read()
+    """
+    rg = open("configs/all.txt", "r", encoding="utf-8").read()
 
-	new_data = rg[0:lenght]
-
-	f = open("configs/"+name, "w", encoding="utf-8")
-	f.write(new_data)
-	f.close()
+    new_data = rg[0:lenght]
+    open("configs/"+name, "w", encoding="utf-8").write(new_data)
 
 
 def get_mse_hash():
@@ -107,29 +104,6 @@ def get_mse_hash():
 	return sha3_512(all_files_datas).hexdigest()
 
 
-def get_bd_text_len():
-	r = randint(1000,len_db_all)
-	db_lenght = choice([r, "small", "medium", "large"])
-
-	if type(db_lenght) is int:
-		db_len = db_lenght
-		db = "perso.txt"
-
-	elif db_lenght == "small":
-		db_len = 16444
-		db = "light_weight.txt"
-
-	elif db_lenght == "medium":
-		db_len = 32889
-		db = "ultra_light_weight.txt"
-
-	elif db_lenght == "large":
-		db_len = len_db_all
-		db = "all.txt"
-	
-	return  db,db_len
-
-
 def first_mixer(random_settings=False):
 	"""
 		Mixes character order and generates random parameters,
@@ -138,15 +112,14 @@ def first_mixer(random_settings=False):
 
 	if os.path.exists("user.data") is False:
 
-		db, db_len = get_bd_text_len()
-		
-		gen_db_text(db, db_len)
+		db = choice(["light_weight.txt", "ultra_light_weight.txt"])
 
 		if random_settings is True:
 			get_random_setting(db)
 		
-		mixer("configs/"+db)
-		rebuild("configs/"+db)
+		gen_db_text(db, randint(250,len(open("configs/all.txt", "r", encoding="utf-8").read())))
+		mixer()
+		rebuild()
 
 		mse_version_hash = get_mse_hash()
 
@@ -158,7 +131,5 @@ def first_mixer(random_settings=False):
 		f.close()
 
 first_mixer(True)
-
-
 
 
