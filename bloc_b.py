@@ -6,7 +6,7 @@
 		Each character is substituted
 """
 
-from configs.configs_setting import*
+from configs.configs_setting import key_number, len_charac_sub, charac_sub
 from random import choice
 import os
 

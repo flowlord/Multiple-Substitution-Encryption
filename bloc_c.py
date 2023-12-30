@@ -8,7 +8,7 @@
 """
 
 
-from configs.configs_setting import*
+from configs.configs_setting import len_charac_group_b, len_charac_group_b, group_b, mini_add_group_b_charac, maxi_add_group_b_charac
 from random import choice,randint
 
 
@@ -89,7 +89,7 @@ def obscur(string):
 	"""
 	string = combine_charac_a(string,get_random_charac_group_b())
 	string = combine_charac_b(string)
-	string = combine_charac_c(string,randint(mini_add_group_b_charac,mini_add_group_b_charac))
+	string = combine_charac_c(string,randint(mini_add_group_b_charac,maxi_add_group_b_charac))
 
 	return string
 

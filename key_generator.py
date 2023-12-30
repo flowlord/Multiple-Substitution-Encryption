@@ -10,7 +10,7 @@
 """
 
 from random import randint,choice
-from configs.configs_setting import*
+from configs.configs_setting import group_a, charac_sub, charac_len, len_special_charac, special_charac, len_charac_sub
 
 def get_random_charac(x):
 

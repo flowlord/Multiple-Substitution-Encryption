@@ -37,10 +37,8 @@ __author__  = "Enron Group"
 __version__ = "27.0.3"
 __date__    = "29 décembre 2023"
 
-
-from random import randint
 from pyperclip import copy
-from configs.configs_setting import*
+
 from bloc_a import complexify,decomplexify
 from bloc_b import cipher,decipher
 from bloc_c import obscur,remove_group_charac_b
@@ -67,3 +65,5 @@ def mse_decipher(msg, auto_copy=False):
 		copy(a)
 	
 	return a
+
+

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import shuffle, choice, randint
+from random import shuffle, randint
 import shutil
 from configs.configs_setting import name,charac_sub
 from settings_generator import get_random_setting
@@ -107,7 +107,7 @@ def first_mixer():
 		if the user is using the program for the first time.
 	"""
 
-	if os.path.exists("user.data") is False:
+	if os.path.exists("user.txt") is False:
 
 		db = "all.txt"
 
@@ -122,7 +122,7 @@ def first_mixer():
 		print(Fore.RED + f"MSE version hash: {mse_version_hash}")
 		print(Style.RESET_ALL)
 
-		f = open("user.data", "w")
+		f = open("user.txt", "w")
 		f.write(mse_version_hash)
 		f.close()
 
